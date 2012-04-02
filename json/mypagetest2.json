@@ -1,0 +1,14 @@
+{
+    "response": {
+        "result": 
+        {
+            "user_list" : [
+                           {
+                           "account_id" : 1,
+                           "nick_name" : "name"
+                           }
+                           ]
+        }, 
+        "result_code": 1
+    }
+}

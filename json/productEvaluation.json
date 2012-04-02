@@ -1,0 +1,49 @@
+{
+    "response": {
+        "result": {
+            "message": {
+                "auction": {
+                    "auction_id": 123
+                }, 
+                "contribution": [
+                                 {
+                                 "account": {
+                                 "account_id": 123, 
+                                 "image": {
+                                 "domain_root": "root", 
+                                 "pos1": {
+                                 "key": "key", 
+                                 "status": [
+                                            {
+                                            "size": "L", 
+                                            "status": "1"
+                                            }, 
+                                            {
+                                            "size": "M", 
+                                            "status": "1"
+                                            }, 
+                                            {
+                                            "size": "S", 
+                                            "status": "1"
+                                            }
+                                            ]
+                                 }
+                                 }, 
+                                 "nick_name": "name", 
+                                 "valuation": {
+                                 "count": 1, 
+                                 "total": 2
+                                 }
+                                 }, 
+                                 "contribution_id": 123, 
+                                 "message": {
+                                 "date": "2012/03/06 00:00:00", 
+                                 "message": "message"
+                                 }
+                                 }
+                                 ]
+            }
+        }, 
+        "result_code": 1
+    }
+}

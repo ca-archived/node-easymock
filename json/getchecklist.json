@@ -1,0 +1,307 @@
+{
+    "response": {
+        "result": {
+            "auction": [
+                        {
+                        "auction_id": 1, 
+                        "auction_type": 1, 
+                        "digest": {
+                        "bid_count": 5, 
+                        "check_list": 0, 
+                        "finish_time": "2012/04/01 00:00:00", 
+                        "is_repasha": 0, 
+                        "now_price": 1000, 
+                        "repasha_count": 1
+                        }, 
+                        "item_name": "product_name1", 
+                        "mylist_state": {
+                        "bbs_badge": 0, 
+                        "history_badge": 0, 
+                        "how_much_badge": 0, 
+                        "message_badge": 0, 
+                        "question_badge": 0
+                        }, 
+                        "picture": {
+                        "domain_root": "", 
+                        "pos1": {
+                        "key": "icon_nouserimage.png", 
+                        "status": [
+                                   {
+                                   "size": "L", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "M", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "S", 
+                                   "status": "1"
+                                   }
+                                   ]
+                        }, 
+                        "pos2": {
+                        "key": "icon_nouserimage.png", 
+                        "status": [
+                                   {
+                                   "size": "L", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "M", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "S", 
+                                   "status": "1"
+                                   }
+                                   ]
+                        }, 
+                        "pos3": {
+                        "key": "icon_nouserimage.png", 
+                        "status": [
+                                   {
+                                   "size": "L", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "M", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "S", 
+                                   "status": "1"
+                                   }
+                                   ]
+                        }
+                        }
+                        }, 
+                        {
+                        "auction_id": 2, 
+                        "auction_type": 0, 
+                        "digest": {
+                        "bid_count": 5, 
+                        "check_list": 1, 
+                        "finish_time": "2012/03/28 00:00:00", 
+                        "is_repasha": 0, 
+                        "now_price": 1000, 
+                        "repasha_count": 1
+                        }, 
+                        "item_name": "product_name2", 
+                        "mylist_state": {
+                        "bbs_badge": 1, 
+                        "history_badge": 2, 
+                        "how_much_badge": 5, 
+                        "message_badge": 4, 
+                        "question_badge": 3
+                        }, 
+                        "picture": {
+                        "domain_root": "", 
+                        "pos1": {
+                        "key": "icon_nouserimage.png", 
+                        "status": [
+                                   {
+                                   "size": "L", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "M", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "S", 
+                                   "status": "1"
+                                   }
+                                   ]
+                        }, 
+                        "pos2": {
+                        "key": "icon_nouserimage.png", 
+                        "status": [
+                                   {
+                                   "size": "L", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "M", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "S", 
+                                   "status": "1"
+                                   }
+                                   ]
+                        }, 
+                        "pos3": {
+                        "key": "icon_nouserimage.png", 
+                        "status": [
+                                   {
+                                   "size": "L", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "M", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "S", 
+                                   "status": "1"
+                                   }
+                                   ]
+                        }
+                        }
+                        },
+                        {
+                        "auction_id": 3, 
+                        "auction_type": 1, 
+                        "digest": {
+                        "bid_count": 5, 
+                        "check_list": 1, 
+                        "finish_time": "2012/03/27 20:00:00", 
+                        "is_repasha": 0, 
+                        "now_price": 10000, 
+                        "repasha_count": 1
+                        }, 
+                        "item_name": "product_name3", 
+                        "mylist_state": {
+                        "bbs_badge": 5, 
+                        "history_badge": 2, 
+                        "how_much_badge": 3, 
+                        "message_badge": 4, 
+                        "question_badge": 3
+                        }, 
+                        "picture": {
+                        "domain_root": "", 
+                        "pos1": {
+                        "key": "icon_nouserimage.png", 
+                        "status": [
+                                   {
+                                   "size": "L", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "M", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "S", 
+                                   "status": "1"
+                                   }
+                                   ]
+                        }, 
+                        "pos2": {
+                        "key": "icon_nouserimage.png", 
+                        "status": [
+                                   {
+                                   "size": "L", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "M", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "S", 
+                                   "status": "1"
+                                   }
+                                   ]
+                        }, 
+                        "pos3": {
+                        "key": "icon_nouserimage.png", 
+                        "status": [
+                                   {
+                                   "size": "L", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "M", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "S", 
+                                   "status": "1"
+                                   }
+                                   ]
+                        }
+                        }
+                        },
+                        {
+                        "auction_id": 4, 
+                        "auction_type": 0, 
+                        "digest": {
+                        "bid_count": 5, 
+                        "check_list": 1, 
+                        "finish_time": "2012/04/01 00:00:00", 
+                        "is_repasha": 0, 
+                        "now_price": 10000, 
+                        "repasha_count": 1
+                        }, 
+                        "item_name": "product_name4", 
+                        "mylist_state": {
+                        "bbs_badge": 5, 
+                        "history_badge": 2, 
+                        "how_much_badge": 3, 
+                        "message_badge": 4, 
+                        "question_badge": 3
+                        }, 
+                        "picture": {
+                        "domain_root": "", 
+                        "pos1": {
+                        "key": "icon_nouserimage.png", 
+                        "status": [
+                                   {
+                                   "size": "L", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "M", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "S", 
+                                   "status": "1"
+                                   }
+                                   ]
+                        }, 
+                        "pos2": {
+                        "key": "icon_nouserimage.png", 
+                        "status": [
+                                   {
+                                   "size": "L", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "M", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "S", 
+                                   "status": "1"
+                                   }
+                                   ]
+                        }, 
+                        "pos3": {
+                        "key": "icon_nouserimage.png", 
+                        "status": [
+                                   {
+                                   "size": "L", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "M", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "S", 
+                                   "status": "1"
+                                   }
+                                   ]
+                        }
+                        }
+                        }
+
+                        ], 
+            "data_count": 10
+        }, 
+        "result_code": 1
+    }
+}

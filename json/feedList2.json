@@ -1,0 +1,100 @@
+{
+    "response": {
+        "result_code": 1,
+        "result": {
+            "feed_list": [
+                          {
+                          "account_id_owner": {
+                          "account_id": "アカウントID", 
+                          "evaluation": {
+                          "count": "評価件数", 
+                          "summary": "総合評価" 
+                          }, 
+                          "image": "アカウント画像", 
+                          "nick_name": "アカウント表示名" 
+                          }, 
+                          "auction_id": "オークションID2", 
+                          "digest": {
+                          "check_list": "チェックリストONorOff", 
+                          "finish_time": "2012/02/20 00:00:00", 
+                          "history": [
+                                      {
+                                      "bid_dete": "入札時刻", 
+                                      "bid_price": "入札価格", 
+                                      "bid_user_name": "入札者" 
+                                      }
+                                      ], 
+                          "now_price": "100000" 
+                          }, 
+                          "item_name": "アイテム名", 
+                          "message": {
+                          "dete": "発言時刻", 
+                          "message": "メッセージ" 
+                          }, 
+                          "picture": [
+                                      {
+                                      "property": [
+                                                   {
+                                                   "size":"H",
+                                                   "status": "1", 
+                                                   "url": "大サイズ画像のURL"
+                                                   },
+                                                   {
+                                                   "size":"M",
+                                                   "status": "1", 
+                                                   "url": "中サイズ画像のURL"
+                                                   },
+                                                   {
+                                                   "size":"L",
+                                                   "status": "1", 
+                                                   "url": "小サイズ画像のURL"
+                                                   }
+                                                   ],
+                                      "position": 1
+                                      },
+                                      {
+                                      "property": [
+                                                   {
+                                                   "size":"H",
+                                                   "status": "1", 
+                                                   "url": "大サイズ画像のURL"
+                                                   },
+                                                   {
+                                                   "size":"M",
+                                                   "status": "1", 
+                                                   "url": "中サイズ画像のURL"
+                                                   },
+                                                   {
+                                                   "size":"L",
+                                                   "status": "1", 
+                                                   "url": "小サイズ画像のURL"
+                                                   }
+                                                   ], 
+                                      "position": 2
+                                      },
+                                      {
+                                      "property": [
+                                                   {
+                                                   "size":"H",
+                                                   "status": "1", 
+                                                   "url": "大サイズ画像のURL"
+                                                   },
+                                                   {
+                                                   "size":"M",
+                                                   "status": "1", 
+                                                   "url": "中サイズ画像のURL"
+                                                   },
+                                                   {
+                                                   "size":"L",
+                                                   "status": "1", 
+                                                   "url": "小サイズ画像のURL"
+                                                   }
+                                                   ], 
+                                      "position": 3
+                                      }
+                                      ]
+                          }
+                          ]
+        }
+    }
+}

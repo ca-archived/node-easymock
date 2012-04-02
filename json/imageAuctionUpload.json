@@ -1,0 +1,30 @@
+{
+    "response": {
+        "result": {
+            "auction": {
+                "auction_id": 1, 
+                "picture": {
+                    "domain_root": "images/I/", 
+                    "pos1": {
+                        "key": "41CM1oxy1NL.jpg", 
+                        "status": [
+                                   {
+                                   "size": "L", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "M", 
+                                   "status": "1"
+                                   }, 
+                                   {
+                                   "size": "S", 
+                                   "status": "1"
+                                   }
+                                   ]
+                    }
+                }
+            }
+        }, 
+        "result_code": 1
+    }
+}

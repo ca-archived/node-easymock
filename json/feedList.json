@@ -1,0 +1,33 @@
+{
+    "response": {
+        "result_code": 1,
+        "result": {
+            "feed_list":[
+                    {
+                         "auction_id" : 1,
+                         "item_name" : "name",
+                         "image" : {
+                            "domain_root" : "root",
+                            "pos1" : {
+                                "key" : "key",
+                                "status" : [
+                                            {
+                                            "size" : "L",
+                                            "status" : "1"
+                                            },
+                                            {
+                                            "size" : "M",
+                                            "status" : "1"
+                                            },
+                                            {
+                                            "size" : "S",
+                                            "status" : "1"
+                                            }
+                                ]
+                            }
+                         }
+                    }
+            ]
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "response":{
+        "result_code" : 2
+        , "error":{
+            "code":100
+            , "message" : "error message" 
+            , "other" : "その他不可情報" 
+        }
+    }
+}
