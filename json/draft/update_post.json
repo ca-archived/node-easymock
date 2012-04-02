@@ -1,0 +1,12 @@
+{
+   "response":{
+      "result_code":1,
+      "result":{
+          "draft" : {
+            "item_name": "this should be filled, but is not...",
+            "limit_datetime": "Tue, 18 Jan 2005 16:30:00 GMT",
+            "auction_id": 7
+          }
+      }
+   }
+}
