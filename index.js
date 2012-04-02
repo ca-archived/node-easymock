@@ -3,6 +3,7 @@ var fs = require('fs');
 var url = require('url');
 var app = express.createServer();
 
+app.use(express.static(__dirname + '/public'));
 app.get('*', function(req, res){
   reqUrl = url.parse(req.url);
   fs.readFile('json' + reqUrl.pathname + '_' + req.method.toLowerCase() + ".json", function(err, data) {
