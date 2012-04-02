@@ -1,0 +1,10 @@
+{
+   "response":{
+      "result_code":1,
+      "result":{
+         "account":{
+            "account_id":"6"
+         }
+      }
+   }
+}
