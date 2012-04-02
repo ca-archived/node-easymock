@@ -5,57 +5,57 @@
             {
                "category_id":1,
                "category_name":"女性ファッション",
-               "extension_fields":"1",
+               "extension_fields":1,
                "icon":{
-                  "domain_root":"http://clathas.net/images/",
+                  "domain_root":"http://172.17.74.141/img/categories/",
                   "pos1":{
-                     "key":"image1-1.jpg",
+                     "key":"1.jpg",
                      "status":[
                         {
                            "size":"L",
-                           "status":"1"
+                           "status":1
                         },
                         {
                            "size":"M",
-                           "status":"1"
+                           "status":1
                         },
                         {
                            "size":"S",
-                           "status":"1"
+                           "status":1
                         }
                      ]
                   },
                   "pos2":{
-                     "key":"image1-1.jpg",
+                     "key":"2.jpg",
                      "status":[
                         {
                            "size":"L",
-                           "status":"1"
+                           "status":1
                         },
                         {
                            "size":"M",
-                           "status":"1"
+                           "status":1
                         },
                         {
                            "size":"S",
-                           "status":"1"
+                           "status":1
                         }
                      ]
                   },
                   "pos3":{
-                     "key":"image1-1.jpg",
+                     "key":"3.jpg",
                      "status":[
                         {
                            "size":"L",
-                           "status":"1"
+                           "status":1
                         },
                         {
                            "size":"M",
-                           "status":"1"
+                           "status":1
                         },
                         {
                            "size":"S",
-                           "status":"1"
+                           "status":1
                         }
                      ]
                   }
@@ -77,23 +77,23 @@
             {
                "category_id":2,
                "category_name":"男性ファッション",
-               "extension_fields":"1",
+               "extension_fields":1,
                "icon":{
-                  "domain_root":"http://www.cdjournal.com/image/jacket/100/Z2/",
+                  "domain_root":"http://172.17.74.141/img/categories/",
                   "pos1":{
-                     "key":"Z226001036.jpg",
+                     "key":"4.jpg",
                      "status":[
                         {
                            "size":"L",
-                           "status":"1"
+                           "status":1
                         },
                         {
                            "size":"M",
-                           "status":"1"
+                           "status":1
                         },
                         {
                            "size":"S",
-                           "status":"1"
+                           "status":1
                         }
                      ]
                   }
@@ -103,23 +103,23 @@
             {
                "category_id":3,
                "category_name":"スポーツ・アウトドア",
-               "extension_fields":"1",
+               "extension_fields":1,
                "icon":{
-                  "domain_root":"http://im1-a.mbokimg.dena.ne.jp/2/7/734/",
+                  "domain_root":"http://172.17.74.141/img/categories/",
                   "pos1":{
-                     "key":"247150734.1.jpg",
+                     "key":"5.jpg",
                      "status":[
                         {
                            "size":"L",
-                           "status":"1"
+                           "status":1
                         },
                         {
                            "size":"M",
-                           "status":"1"
+                           "status":1
                         },
                         {
                            "size":"S",
-                           "status":"1"
+                           "status":1
                         }
                      ]
                   }
