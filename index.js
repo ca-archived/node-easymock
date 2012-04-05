@@ -9,14 +9,27 @@ app.post('*', handleAnyRequest);
 app.delete('*', handleAnyRequest);
 app.put('*', handleAnyRequest);
 
+
+var TEMPLATE_PATTERN = new RegExp(/{{.*}}/g);
+
 function handleAnyRequest(req, res){
   reqUrl = url.parse(req.url);
   var file = 'json' + reqUrl.pathname + '_' + req.method.toLowerCase() + ".json";
   console.log('Request: ' + file);
-  fs.readFile(file, function(err, data) {
-    if (err) { return res.send('Error: ' + err); }
-    res.send(data.toString().trim());
-  });
+
+  var data = readFileJson(file);
+  res.send(data)
+}
+
+function readFileJson(file) {
+  var data = fs.readFileSync(file, 'utf8');
+
+  data = data.replace(TEMPLATE_PATTERN, function(match) {
+    var templateFile = 'json/_templates/' + match.slice(2,-2) + ".json";
+    return JSON.stringify(readFileJson(templateFile));
+  } );
+
+  return JSON.parse(data);
 }
 
 app.listen(80);
