@@ -17,6 +17,7 @@ function handleAnyRequest(req, res){
   var file = 'json' + reqUrl.pathname + '_' + req.method.toLowerCase() + ".json";
   console.log('Request: ' + file);
 
+  // TODO allow proxying calls to real API (for calls that are already implemented)
   var data = readFileJson(file);
   res.send(data)
 }
@@ -25,6 +26,7 @@ function readFileJson(file) {
   var data = fs.readFileSync(file, 'utf8');
 
   data = data.replace(TEMPLATE_PATTERN, function(match) {
+    // TODO: allow variables instead of templates like SERVER_BASE_URL
     var templateFile = 'json/_templates/' + match.slice(2,-2) + ".json";
     return JSON.stringify(readFileJson(templateFile));
   } );
