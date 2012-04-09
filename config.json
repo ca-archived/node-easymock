@@ -1,0 +1,8 @@
+{
+  "server": "http://api.stg-pashaoku.jp",
+  "calls": {
+    "/application/gen": { "post": true },
+    "/draft/create": true,
+    "/account/login": true
+  }
+}
