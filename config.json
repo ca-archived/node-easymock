@@ -7,7 +7,7 @@
 
     "/draft/create": true,
     "/draft/update": true,
-    "/auction/exhibition": true,
-    "/auction/add_pr": true
+    "/auction/exhibition": false,
+    "/auction/add_pr": false
   }
 }
