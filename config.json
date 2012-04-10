@@ -2,7 +2,12 @@
   "server": "http://api.stg-pashaoku.jp",
   "calls": {
     "/application/gen": { "post": true },
+    "/account/login": true,
+    "/profile/update": true,
+
     "/draft/create": true,
-    "/account/login": true
+    "/draft/update": true,
+    "/auction/exhibition": true,
+    "/auction/add_pr": true
   }
 }
