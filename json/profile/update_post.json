@@ -1,0 +1,10 @@
+{
+   "response":{
+      "result_code":1,
+      "result":{
+         "profile_get":{
+            "account_id":"6"
+         }
+      }
+   }
+}
