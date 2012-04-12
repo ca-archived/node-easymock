@@ -1,0 +1,23 @@
+{
+    "response": {
+        "result": {
+            "mypage_badge":{
+                "user_detail_badge":"1",
+                "user_information_badge":"2",
+                "all_information_badge":"3",
+            },
+            "activelist_badge":{
+                "check_list_badge1":"4",
+                "check_list_badge2":"5",
+                "check_list_badge3":"6",
+                "buy_list_badge1":"7",
+                "buy_list_badge2":"8",
+                "buy_list_badge3":"9",
+                "sell_list_badge1":"10",
+                "sell_list_badge2":"11",
+                "sell_list_badge3":"12",
+            }
+        }, 
+        "result_code": 1
+    }
+}
