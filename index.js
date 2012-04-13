@@ -57,13 +57,13 @@ var reqUrl = url.parse(req.url);
   var parsedUrl = url.parse(readConfig().server);
   console.log('Request: ' + req.method + ' ' + reqUrl.pathname);
   if (shouldProxy(req)) {
+    console.log('==> Proxy');
     req.headers['host'] = parsedUrl.hostname;
     proxy.proxyRequest(req, res, {
       host: parsedUrl.hostname,
       port: 80
     });
   } else {
-    console.log('=> Proxy');
     proxy.proxyRequest(req, res, {
       host: 'localhost',
       port: 3001
