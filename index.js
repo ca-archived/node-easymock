@@ -63,6 +63,7 @@ var reqUrl = url.parse(req.url);
       port: 80
     });
   } else {
+    console.log('=> Proxy');
     proxy.proxyRequest(req, res, {
       host: 'localhost',
       port: 3001
