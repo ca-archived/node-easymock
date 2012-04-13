@@ -3,6 +3,17 @@ var fs = require('fs');
 var url = require('url');
 var http = require('http');
 var path = require('path');
+var httpProxy = require('http-proxy');
+
+var configFile = 'config.json';
+
+function readConfig() {
+  return JSON.parse(fs.readFileSync(configFile, 'utf8'));
+}
+
+//////////////
+// MOCK SERVER
+//////////////
 var app = express.createServer();
 
 app.use(express.static(__dirname + '/public'));
@@ -10,19 +21,13 @@ app.get('*', handleAnyRequest);
 app.post('*', handleAnyRequest);
 app.delete('*', handleAnyRequest);
 app.put('*', handleAnyRequest);
+app.listen(3001);
 
 var TEMPLATE_PATTERN = new RegExp(/{{.*}}/g);
 
-var configFile = 'config.json';
-
 function handleAnyRequest(req, res){
   var reqUrl = url.parse(req.url);
-  console.log('Request: ' + req.method + ' ' + reqUrl.pathname);
 
-  if (shouldProxy(req)) {
-    console.log('==> Proxy');
-    return proxy(req, res);
-  }
   var file = 'json' + reqUrl.pathname + '_' + req.method.toLowerCase() + ".json";
 
   console.log('==> ' + file);
@@ -43,6 +48,28 @@ function readFileJson(file) {
   return JSON.parse(data);
 }
 
+///////////////
+// PROXY SERVER
+///////////////
+
+httpProxy.createServer(function (req, res, proxy) {
+var reqUrl = url.parse(req.url);
+  var parsedUrl = url.parse(readConfig().server);
+  console.log('Request: ' + req.method + ' ' + reqUrl.pathname);
+  if (shouldProxy(req)) {
+    req.headers['host'] = parsedUrl.hostname;
+    proxy.proxyRequest(req, res, {
+      host: parsedUrl.hostname,
+      port: 80
+    });
+  } else {
+    proxy.proxyRequest(req, res, {
+      host: 'localhost',
+      port: 3001
+    });
+  }
+}).listen(3000);
+
 function shouldProxy(req) {
   if (!path.existsSync(configFile)) {
     return false;
@@ -59,31 +86,4 @@ function shouldProxy(req) {
   return false;
 }
 
-function proxy(request, response) {
-  var parsedUrl = url.parse(readConfig().server);
-  var proxy = http.createClient(80, parsedUrl.hostname);
-  request.headers['host'] = parsedUrl.hostname;
-  var proxy_request = proxy.request(request.method, request.url, request.headers);
-  proxy_request.addListener('response', function (proxy_response) {
-    proxy_response.addListener('data', function(chunk) {
-      response.write(chunk, 'binary');
-    });
-    proxy_response.addListener('end', function() {
-      response.end();
-    });
-    response.writeHead(proxy_response.statusCode, proxy_response.headers);
-  });
-  request.addListener('data', function(chunk) {
-    proxy_request.write(chunk, 'binary');
-  });
-  request.addListener('end', function() {
-    proxy_request.end();
-  });
-}
-
-function readConfig() {
-  return JSON.parse(fs.readFileSync(configFile, 'utf8'));
-}
-
-app.listen(3000);
 console.log('Server running on http://localhost:3000');
