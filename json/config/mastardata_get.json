@@ -1,6 +1,5 @@
 {
     "response": {
-	"result_code": "1",
         "result": {
             "extension_fields": [
                 {
@@ -225,7 +224,38 @@
                         }
                     ]
                 }
+            ], 
+            "item_state": [
+                {
+                    "key": "0", 
+                    "value": "新品"
+                }, 
+                {
+                    "key": "1", 
+                    "value": "中古"
+                }
+            ], 
+            "prefecture": [
+                {
+                    "key": "0", 
+                    "value": "北海道"
+                }, 
+                {
+                    "key": "1", 
+                    "value": "青森県"
+                }
+            ], 
+            "sipping": [
+                {
+                    "key": "0", 
+                    "value": "クロネコヤマト"
+                }, 
+                {
+                    "key": "1", 
+                    "value": "ソフトバンクフレームワーク"
+                }
             ]
-        }
+        }, 
+        "result_code": "1"
     }
 }
