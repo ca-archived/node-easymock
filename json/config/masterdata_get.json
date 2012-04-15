@@ -7,7 +7,7 @@
                     "fieled_name": "extension_fields_dress_size", 
                     "hint": "", 
                     "id": "1", 
-                    "name": "サイズ", 
+                    "name": "size", 
                     "null": "False", 
                     "range_max": "", 
                     "range_min": "", 
@@ -16,7 +16,7 @@
                     "valid_value": [
                         {
                             "key": "F", 
-                            "value": "フリー"
+                            "value": "free"
                         }, 
                         {
                             "key": "S", 
@@ -32,7 +32,7 @@
                         }, 
                         {
                             "key": "O", 
-                            "value": "その他"
+                            "value": "other"
                         }
                     ]
                 }, 
@@ -41,7 +41,7 @@
                     "fieled_name": "extension_fields_ladies_shoes_size", 
                     "hint": "", 
                     "id": "2", 
-                    "name": "サイズ", 
+                    "name": "size", 
                     "null": "False", 
                     "range_max": "", 
                     "range_min": "", 
@@ -50,7 +50,7 @@
                     "valid_value": [
                         {
                             "key": "22.5", 
-                            "value": "22.5以下"
+                            "value": "22.5"
                         }, 
                         {
                             "key": "23.0", 
@@ -74,7 +74,7 @@
                         }, 
                         {
                             "key": "25.5", 
-                            "value": "25.5以上"
+                            "value": "25.5"
                         }
                     ]
                 }, 
@@ -83,7 +83,7 @@
                     "fieled_name": "extension_fields_mens_shoes_size", 
                     "hint": "", 
                     "id": "3", 
-                    "name": "サイズ", 
+                    "name": "size", 
                     "null": "False", 
                     "range_max": "", 
                     "range_min": "", 
@@ -92,7 +92,7 @@
                     "valid_value": [
                         {
                             "key": "23.5", 
-                            "value": "23.5以下"
+                            "value": "23.5"
                         }, 
                         {
                             "key": "24.0", 
@@ -132,7 +132,7 @@
                         }, 
                         {
                             "key": "28.5", 
-                            "value": "28.5以上"
+                            "value": "28.5"
                         }
                     ]
                 }, 
@@ -141,7 +141,7 @@
                     "fieled_name": "extension_fields_baby_size", 
                     "hint": "", 
                     "id": "4", 
-                    "name": "サイズ", 
+                    "name": "size", 
                     "null": "False", 
                     "range_max": "", 
                     "range_min": "", 
@@ -150,7 +150,7 @@
                     "valid_value": [
                         {
                             "key": "50", 
-                            "value": "50以下"
+                            "value": "50"
                         }, 
                         {
                             "key": "70", 
@@ -170,7 +170,7 @@
                         }, 
                         {
                             "key": "100", 
-                            "value": "95以上"
+                            "value": "95"
                         }
                     ]
                 }, 
@@ -179,7 +179,7 @@
                     "fieled_name": "extension_fields_kids_size", 
                     "hint": "", 
                     "id": "5", 
-                    "name": "サイズ", 
+                    "name": "size", 
                     "null": "False", 
                     "range_max": "", 
                     "range_min": "", 
@@ -188,7 +188,7 @@
                     "valid_value": [
                         {
                             "key": "100", 
-                            "value": "100以下"
+                            "value": "100"
                         }, 
                         {
                             "key": "110", 
@@ -220,7 +220,7 @@
                         }, 
                         {
                             "key": "180", 
-                            "value": "170以上"
+                            "value": "170"
                         }
                     ]
                 }
@@ -228,31 +228,31 @@
             "item_state": [
                 {
                     "key": "0", 
-                    "value": "新品"
+                    "value": "new"
                 }, 
                 {
                     "key": "1", 
-                    "value": "中古"
+                    "value": "old"
                 }
             ], 
             "prefecture": [
                 {
                     "key": "0", 
-                    "value": "北海道"
+                    "value": "hokkaido"
                 }, 
                 {
                     "key": "1", 
-                    "value": "青森県"
+                    "value": "aomoriken"
                 }
             ], 
             "sipping": [
                 {
                     "key": "0", 
-                    "value": "クロネコヤマト"
+                    "value": "kuronekoyamato"
                 }, 
                 {
                     "key": "1", 
-                    "value": "ソフトバンクフレームワーク"
+                    "value": "sagawa"
                 }
             ]
         }, 
