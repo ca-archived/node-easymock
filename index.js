@@ -56,19 +56,27 @@ httpProxy.createServer(function (req, res, proxy) {
 var reqUrl = url.parse(req.url);
   var parsedUrl = url.parse(readConfig().server);
   console.log('Request: ' + req.method + ' ' + reqUrl.pathname);
-  if (shouldProxy(req)) {
-    console.log('==> Proxy');
-    req.headers['host'] = parsedUrl.hostname;
-    proxy.proxyRequest(req, res, {
-      host: parsedUrl.hostname,
-      port: 80
-    });
-  } else {
-    proxy.proxyRequest(req, res, {
-      host: 'localhost',
-      port: 3001
-    });
-  }
+  
+  var simulatedLag = readConfig()['simulated-lag'] || 0;
+  var buffer = httpProxy.buffer(req);
+
+  setTimeout(function () {
+    if (shouldProxy(req)) {
+      console.log('==> Proxy');
+      req.headers['host'] = parsedUrl.hostname;
+      proxy.proxyRequest(req, res, {
+        host: parsedUrl.hostname,
+        port: 80,
+        buffer: buffer
+      });
+    } else {
+      proxy.proxyRequest(req, res, {
+        host: 'localhost',
+        port: 3001,
+        buffer: buffer
+      });
+    }
+  }, simulatedLag);
 }).listen(3000);
 
 function shouldProxy(req) {

@@ -1,13 +1,20 @@
 {
   "server": "http://api.stg-pashaoku.jp",
+  "simulated-lag": 4000,
   "calls": {
     "/application/gen": { "post": true },
+    "/application/version": true,
     "/account/login": true,
     "/profile/update": true,
 
     "/draft/create": true,
     "/draft/update": true,
     "/auction/exhibition": false,
-    "/auction/add_pr": false
+    "/auction/add_pr": false,
+    "/auction/category": false,
+
+    "/feed/category_get": true,
+    "/feed/show": true,
+    "/category/show": true
   }
 }
