@@ -26,13 +26,13 @@ app.listen(3001);
 var TEMPLATE_PATTERN = new RegExp(/{{.*}}/g);
 
 function handleAnyRequest(req, res){
-  var reqUrl = url.parse(req.url);
-
-  var file = 'json' + reqUrl.pathname + '_' + req.method.toLowerCase() + ".json";
-
-  console.log('==> ' + file);
-  var data = readFileJson(file);
+  var data = readFileJson(getFileForRequest(req));
   res.send(data);
+}
+
+function getFileForRequest(req) {
+  var reqUrl = url.parse(req.url);
+  return 'json' + reqUrl.pathname + '_' + req.method.toLowerCase() + ".json";
 }
 
 function readFileJson(file) {
@@ -43,7 +43,7 @@ function readFileJson(file) {
     // TODO: for templates, allow {{Template(1)}} to add variables that can be used in the template like: {{param[1]}}
     var templateFile = 'json/_templates/' + match.slice(2,-2) + ".json";
     return JSON.stringify(readFileJson(templateFile));
-  } );
+  });
 
   return JSON.parse(data);
 }
@@ -58,10 +58,14 @@ var reqUrl = url.parse(req.url);
   
   var simulatedLag = readConfig()['simulated-lag'] || 0;
   var buffer = httpProxy.buffer(req);
+  if (shouldProxy(req)) {
+    console.log('==> Proxy');
+  } else {
+    console.log('==> ' + getFileForRequest(req));
+  }
 
   setTimeout(function () {
     if (shouldProxy(req)) {
-      console.log('==> Proxy');
       var parsedUrl = url.parse(readConfig().proxy.server);
       req.headers['host'] = parsedUrl.hostname;
       proxy.proxyRequest(req, res, {
