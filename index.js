@@ -54,7 +54,6 @@ function readFileJson(file) {
 
 httpProxy.createServer(function (req, res, proxy) {
 var reqUrl = url.parse(req.url);
-  var parsedUrl = url.parse(readConfig().server);
   console.log('Request: ' + req.method + ' ' + reqUrl.pathname);
   
   var simulatedLag = readConfig()['simulated-lag'] || 0;
@@ -63,6 +62,7 @@ var reqUrl = url.parse(req.url);
   setTimeout(function () {
     if (shouldProxy(req)) {
       console.log('==> Proxy');
+      var parsedUrl = url.parse(readConfig().proxy.server);
       req.headers['host'] = parsedUrl.hostname;
       proxy.proxyRequest(req, res, {
         host: parsedUrl.hostname,
@@ -84,15 +84,21 @@ function shouldProxy(req) {
     return false;
   }
   var config = readConfig();
-  if (config.calls && config.calls[url.parse(req.url).pathname]) {
-    var entry = config.calls[url.parse(req.url).pathname];
-    if (typeof(entry) == 'object') {
-      return entry[req.method.toLowerCase()];
-    } else if (typeof(entry) == 'boolean') {
-      return entry;
+  if (config.proxy) {
+    var defaultProxy = config.proxy.default || false;
+    if (config.proxy.calls && config.proxy.calls[url.parse(req.url).pathname]) {
+      var entry = config.proxy.calls[url.parse(req.url).pathname];
+      if (typeof(entry) == 'object') {
+        return entry[req.method.toLowerCase()] || defaultProxy;
+      } else if (typeof(entry) == 'boolean') {
+        return entry;
+      }
+    } else {
+      return defaultProxy;
     }
+  } else {
+    return false;
   }
-  return false;
 }
 
 console.log('Server running on http://localhost:3000');
