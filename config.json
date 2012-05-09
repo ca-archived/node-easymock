@@ -1,5 +1,5 @@
 {
-  "simulated-lag": 4000,
+  "simulated-lag": 0,
   "proxy": {
     "server": "http://api.stg-pashaoku.jp",
     "default": true,
