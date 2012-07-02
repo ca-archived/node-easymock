@@ -10,7 +10,7 @@ describe 'Static files', ->
       res.statusCode.should.equal 200
       json = JSON.parse res.body
       json.should.have.property('test')
-      json.test.should.equal true
+      json.test.should.be.true
       done()
 
 describe 'Mock file', ->
@@ -19,7 +19,7 @@ describe 'Mock file', ->
       res.statusCode.should.equal 200
       json = JSON.parse res.body
       json.should.have.property('test')
-      json.test.should.equal true
+      json.test.should.be.true
       done()
 
   it 'POST /test1 should serve test1_post.json', (done) ->
@@ -27,7 +27,7 @@ describe 'Mock file', ->
       res.statusCode.should.equal 200
       json = JSON.parse res.body
       json.should.have.property('post')
-      json.post.should.equal true
+      json.post.should.be.true
       done()
 
 
