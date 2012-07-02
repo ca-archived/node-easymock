@@ -1,5 +1,18 @@
 # Mock Server
 
+## Usage
+
+        $ clone git://......
+        $ cd mock-server
+        $ npm link
+        $ cd ~/your-mock-files
+        $ mockit
+
+We will try to release this on npm. Than the first three steps will only be:
+
+        $ npm install -g mockit
+        $ mockit
+
 ## Files
 All files from the running folder are present as static files. So place anything in there and it is accessible with GET filename.
 
