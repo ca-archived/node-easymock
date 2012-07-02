@@ -1,4 +1,3 @@
-log
 node_modules/
 
-json/account/.DS_Store
+.DS_Store

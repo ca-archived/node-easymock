@@ -1,9 +1,11 @@
 {
     "name": "template"
   , "version": "0.0.1"
-  , "private": true
+  , "private": false
   , "dependencies": {
       "express": "2.5.8",
       "http-proxy": "0.8.0"
-  }
+    }
+  , "main": "lib/index"
+  , "bin": { "mockit": "./bin/mockit.js" }
 }
