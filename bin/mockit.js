@@ -1,3 +1,5 @@
 #!/usr/bin/env node
 
-require('../lib/index').mock();
+var MockServer = require('../lib/index').MockServer;
+var mock = new MockServer();
+mock.start();
