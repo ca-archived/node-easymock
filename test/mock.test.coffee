@@ -37,9 +37,9 @@ describe 'Templates', ->
       json = JSON.parse res.body
       json.should.have.property 'object1'
       json.object1.should.have.property 'value1'
-      json.object1.value1.should.equal 'test'
+      json.object1.value1.should.equal 'test1'
       json.object1.should.have.property 'value2'
-      json.object1.value2.should.equal 'test1'
+      json.object1.value2.should.equal 'test2'
       done()
 
 
