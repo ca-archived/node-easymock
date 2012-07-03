@@ -1,0 +1,5 @@
+[
+  {{ObjectWithParams(1,one,true)}},
+  {{ObjectWithParams(2,two,false)}},
+  {{ObjectWithParams(3,three,true)}}
+]

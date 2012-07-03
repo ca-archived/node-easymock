@@ -1,0 +1,5 @@
+{
+  "name": "Item #{_1}",
+  "image": "#{server}/img/img_#{_2}.jpg",
+  "active": #{_3}
+}
