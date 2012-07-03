@@ -30,6 +30,17 @@ describe 'Mock file', ->
       json.post.should.be.true
       done()
 
+describe 'Templates', ->
+  it '{{Object1}} should be replaced with _templates/Object1.json', (done) ->
+    request 'get', '/with_template', (res) ->
+      res.statusCode.should.equal 200
+      json = JSON.parse res.body
+      json.should.have.property 'object1'
+      json.object1.should.have.property 'value1'
+      json.object1.value1.should.equal 'test'
+      json.object1.should.have.property 'value2'
+      json.object1.value2.should.equal 'test1'
+      done()
 
 
 request = (method, path, options, fn) ->
