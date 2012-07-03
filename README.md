@@ -23,6 +23,19 @@ If you want to use advanced serving features like GET/POST/PUT/DELETE or templat
         POST /items/1 => items/1_post.json
         ...
 
+### Templates
+If you have items that are used over and over again, you can make templates for them and reuse the same template.
+
+For that create a folder "_templates" and in it place for example a file object.json:
+
+        { "name": "my object" }
+
+Then you can refer this template out of another file like items_get.json:
+
+        [ {{object}}, {{object}}, {{object}}, {{object}} ]
+
+This will return a array with four times the object from the template.
+
 ## config.json
 If you want to configure proxy or lag, create a config.json file which looks kind of like this:
 
@@ -35,5 +48,19 @@ If you want to configure proxy or lag, create a config.json file which looks kin
               "/items/1": { "get": true, "post": false },
               "/items": false
             }
+          },
+          "variables": {
+            "server": "http://server.com"
           }
         }
+
+### Variables
+Variables that you define in your config.json can be used in files that have the _get/_post/... extension. As well you can use them in your templates.
+
+Example to use variables. item_get.json:
+
+        { "image": "#{server}/img.jpg" }
+
+This will return:
+
+        { "image": "http://server.com/img.jpg"}
