@@ -36,6 +36,44 @@ Then you can refer this template out of another file like items_get.json:
 
 This will return a array with four times the object from the template.
 
+#### Parameters
+
+You can even use parameters. For example you have a template Object.json:
+
+         {
+            "name": "Item #{_1}",
+            "image": "#{server}/img/img_#{_2}.jpg",
+            "active": #{_3}
+          }
+
+And then a api object called items_get.json:
+
+          [
+            {{Object(1,one,true)}},
+            {{Object(2,two,false)}},
+            {{Object(3,three,true)}}
+          ]
+
+You will receive the following response:
+
+          [
+             {
+                "name":"Item 1",
+                "image":"http://server.com/img/img_one.jpg",
+                "active":true
+             },
+             {
+                "name":"Item 2",
+                "image":"http://server.com/img/img_two.jpg",
+                "active":false
+             },
+             {
+                "name":"Item 3",
+                "image":"http://server.com/img/img_three.jpg",
+                "active":true
+             }
+          ]
+
 ## config.json
 If you want to configure proxy or lag, create a config.json file which looks kind of like this:
 
