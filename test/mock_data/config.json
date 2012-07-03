@@ -1,0 +1,5 @@
+{
+  "variables" : {
+    "server": "http://server.com"
+  }
+}

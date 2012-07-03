@@ -2,7 +2,7 @@ http = require("http")
 should = should = require('chai').should()
 TESTING_PORT = 12345
 
-require("../lib").mock({ port: TESTING_PORT, log_enabled: false, path: __dirname + '/mock_data' })
+require("../lib").mock({ port: TESTING_PORT, log_enabled: false, path: __dirname + '/mock_data/' })
 
 describe 'Static files', ->
   it 'GET /test1_get.json should serve test1_get.json', (done) ->
@@ -40,6 +40,15 @@ describe 'Templates', ->
       json.object1.value1.should.equal 'test1'
       json.object1.should.have.property 'value2'
       json.object1.value2.should.equal 'test2'
+      done()
+
+describe 'Variables', ->
+  it '#{server} should be replaced with server variable from config.json', (done) ->
+    request 'get', '/with_variable', (res) ->
+      res.statusCode.should.equal 200
+      json = JSON.parse res.body
+      json.should.have.property 'image'
+      json.image.should.equal 'http://server.com/image.jpg'
       done()
 
 
