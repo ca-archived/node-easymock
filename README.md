@@ -59,6 +59,7 @@ If you want to use advanced serving features like GET/POST/PUT/DELETE or templat
 ---------
 
 ## Templates
+
 If you have items that are used over and over again, you can make templates for them and reuse the same template.
 
 For that create a folder "_templates" and in it place for example a file object.json:
