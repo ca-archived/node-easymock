@@ -82,3 +82,25 @@ describe 'Mock Server', ->
         json[2].should.have.property('image').and.equal 'http://server.com/img/img_three.jpg'
         json[2].should.have.property('active').and.be.true
         done()
+
+  describe 'Routes /groups/:id', ->
+    it '/groups/1 remapped to /groups/id', (done) ->
+      request 'get', '/groups/1', (res) ->
+        res.statusCode.should.equal 200
+        json = JSON.parse res.body
+        json.id.should.equal '1234'
+        json.name.should.equal 'Group'
+        done()
+    it '/groups/1 should supply a #{id} variable that gets replaced', (done) ->
+      request 'get', '/groups/1', (res) ->
+        res.statusCode.should.equal 200
+        json = JSON.parse res.body
+        json.name2.should.equal 'Group 1'
+        done()
+    it '/groups/1/users/2 should supply a #{id} and ${userid} variable that gets replaced', (done) ->
+      request 'get', '/groups/1/users/2', (res) ->
+        res.statusCode.should.equal 200
+        json = JSON.parse res.body
+        json.groupid.should.equal '1'
+        json.userid.should.equal '2'
+        done()

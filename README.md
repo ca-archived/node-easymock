@@ -109,3 +109,7 @@ You will receive the following response:
                 "active":true
              }
           ]
+
+## Run tests
+
+    make tests

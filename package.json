@@ -10,6 +10,7 @@
       "chai": "1.1.0"
     , "mocha": "1.2.2"
     , "coffee-script": "1.3.3"
+    , "underscore": "1.4.2"
   }
   , "main": "lib/index"
   , "bin": { "mockit": "./bin/mockit.js" }

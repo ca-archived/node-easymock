@@ -1,5 +1,9 @@
 {
   "variables" : {
     "server": "http://server.com"
-  }
+  },
+  "routes": [
+    "/groups/:id",
+    "/groups/:groupid/users/:userid"
+  ]
 }
