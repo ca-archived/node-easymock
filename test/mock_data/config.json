@@ -4,6 +4,7 @@
   },
   "routes": [
     "/groups/:id",
+    "/groups/:groupid/show",
     "/groups/:groupid/users/:userid"
   ]
 }

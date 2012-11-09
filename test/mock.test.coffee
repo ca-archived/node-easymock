@@ -104,3 +104,13 @@ describe 'Mock Server', ->
         json.groupid.should.equal '1'
         json.userid.should.equal '2'
         done()
+    it '/groups/5/show {{Nested(#{_1}1)}} should get resolved correctly to Nested with _1=51', (done) ->
+      request 'get', '/groups/5/show', (res) ->
+        res.statusCode.should.equal 200
+        json = JSON.parse res.body
+        json.length.should.equal 2
+        json[0].id.should.equal 51
+        json[0].nested.id.should.equal 51
+        json[1].id.should.equal 52
+        json[1].nested.id.should.equal 52
+        done()
