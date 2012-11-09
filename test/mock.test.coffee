@@ -19,6 +19,13 @@ describe 'Mock Server', ->
         json.should.have.property 'test'
         json.test.should.be.true
         done()
+    it 'GET /test2.json should serve test2.json', (done) ->
+      request 'get', '/test2.json', (res) ->
+        res.statusCode.should.equal 200
+        json = JSON.parse res.body
+        json.should.have.property 'id'
+        json.id.should.equal '2'
+        done()
 
   describe 'Mock file', ->
     it 'GET /test1 should serve test1_get.json', (done) ->
@@ -113,4 +120,10 @@ describe 'Mock Server', ->
         json[0].nested.id.should.equal 51
         json[1].id.should.equal 52
         json[1].nested.id.should.equal 52
+        done()
+    it '/groups should not forward to /groups/', (done) ->
+      request 'get', '/groups', (res) ->
+        res.statusCode.should.equal 200
+        json = JSON.parse res.body
+        json.name.should.equal 'groups'
         done()
