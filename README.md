@@ -15,8 +15,20 @@ We will try to release this on npm. Than the first three steps will only be:
 
 ---------
 
+## Files
+All files from the running folder are present as static files. So place anything in there and it is accessible with GET filename.
+
+### Differentiating GET/POST/PUT/DELETE
+If you want to use advanced serving features like GET/POST/PUT/DELETE or templates in json, provide files like in the example below:
+
+        GET /items/1 => items/1_get.json
+        POST /items/1 => items/1_post.json
+        ...
+
+---------
+
 ## config.json
-If you want to configure proxy or lag, create a config.json file which looks kind of like this:
+If you want to configure routes, proxy or lag, create a config.json file which looks kind of like this:
 
         {
           "simulated-lag": 1000,
@@ -30,7 +42,12 @@ If you want to configure proxy or lag, create a config.json file which looks kin
           },
           "variables": {
             "server": "http://server.com"
-          }
+          },
+          "routes": [
+            "/user/:userid",
+            "/user/:userid/profile",
+            "/user/:userid/inbox/:messageid"
+          ]
         }
 
 ### Variables
@@ -44,17 +61,14 @@ This will return:
 
         { "image": "http://server.com/img.jpg"}
 
----------
+### Routes
+The routes defined in the config.xml will get mapped to one corresponding file in which the given name will be available as a variable.
 
-## Files
-All files from the running folder are present as static files. So place anything in there and it is accessible with GET filename.
+With the above confix.xml a call to GET /user/1234 would get mapped to the file: /user/userid_get.json. Inside that file one could write:
 
-### Differentiating GET/POST/PUT/DELETE
-If you want to use advanced serving features like GET/POST/PUT/DELETE or templates in json, provide files like in the example below:
+    { "id": #{userid} }
 
-        GET /items/1 => items/1_get.json
-        POST /items/1 => items/1_post.json
-        ...
+If this is the file, the result would be ```{ "userid": 1234 }```
 
 ---------
 
