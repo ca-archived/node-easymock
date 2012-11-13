@@ -1,5 +1,5 @@
 should = require('chai').should()
-MockServer = require("../lib").MockServer
+MockServer = require('../index').MockServer
 utils = require('./utils')
 request = utils.request
 
