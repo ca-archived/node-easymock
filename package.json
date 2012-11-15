@@ -1,6 +1,6 @@
 {
-    "name": "MockIt"
-  , "version": "0.0.1"
+    "name": "EasyMock"
+  , "version": "0.1.0"
   , "private": false
   , "dependencies": {
         "express": "2.5.8"
@@ -13,7 +13,7 @@
     , "underscore": "1.4.2"
   }
   , "main": "index"
-  , "bin": { "mockit": "./bin/mockit.js" }
+  , "bin": { "easymock": "./bin/easymock.js" }
   , "scripts": {
     "test": "make tests"
   }

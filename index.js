@@ -1,3 +1,3 @@
-module.exports = process.env.MOCKIT_COV
-  ? require('./lib-cov/mockit')
-  : require('./lib/mockit');
+module.exports = process.env.EASYMOCK_COV
+  ? require('./lib-cov/easymock')
+  : require('./lib/easymock');

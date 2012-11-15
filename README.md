@@ -1,17 +1,9 @@
-# Mock Server
+# EasyMock Server
 
 ## Usage
 
-        $ clone git://......
-        $ cd mock-server
-        $ npm link
-        $ cd ~/your-mock-files
-        $ mockit
-
-We will try to release this on npm. Than the first three steps will only be:
-
-        $ npm install -g mockit
-        $ mockit
+        $ npm install -g easymock
+        $ easymock
 
 ---------
 
