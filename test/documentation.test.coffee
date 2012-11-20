@@ -9,7 +9,11 @@ describe 'API Documentation', ->
   beforeEach ->
     mock = new MockServer({ port: utils.TESTING_PORT, log_enabled: false, path: __dirname + '/mock_data/' })
     try
+      # TODO refactor
       fs.unlinkSync(mock.options.path + '/_documentation/index.html')
+      fs.unlinkSync(mock.options.path + '/_documentation/documentation.css')
+      fs.unlinkSync(mock.options.path + '/_documentation/documentation.js')
+      fs.unlinkSync(mock.options.path + '/_documentation/zepto.min.js')
       fs.rmdirSync(mock.options.path + '/_documentation')
     mock.start()
   afterEach ->
@@ -36,7 +40,9 @@ describe 'API Documentation', ->
   describe 'generateApiDocumentation', ->
     it 'should generate the html file', (done) ->
       mock.generateApiDocumentation () ->
-        documentationPath = mock.options.path + '/_documentation/index.html'
-        exists = fs.existsSync(documentationPath)
-        exists.should.be.true
+        # TODO refactor
+        fs.existsSync(mock.options.path + '/_documentation/index.html').should.be.true
+        fs.existsSync(mock.options.path + '/_documentation/documentation.css').should.be.true
+        fs.existsSync(mock.options.path + '/_documentation/documentation.js').should.be.true
+        fs.existsSync(mock.options.path + '/_documentation/zepto.min.js').should.be.true
         done()

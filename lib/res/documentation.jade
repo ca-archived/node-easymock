@@ -2,10 +2,15 @@ doctype 5
 html(lang="en")
   head
     title API Documentation
+    link(rel='stylesheet',type='text/css',href='documentation.css')
   body
     h1 API Documentation
     each call in calls
       div(class=call.classes)
-        label.method= call.method
-        label.path= call.path
-        div.response= call.response
+        .head
+          label.method= call.method
+          label.path= call.path
+        .response
+          pre= call.response
+    script(src='zepto.min.js')
+    script(src='documentation.js')

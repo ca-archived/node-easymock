@@ -1,0 +1,26 @@
+body {
+  margin: 5px;
+  font-family: Helvetica, sans-serif;
+}
+h1,h2,h3,h4,h5 {
+  margin: 0;
+}
+label.method {
+  min-width: 50px;
+  display: inline-block;
+  text-align: center;
+  margin-right: 5px;
+  color: #ffffff;
+}
+.get label.method {
+  background: #4699FF;
+}
+.post label.method {
+  background: #6FB728;
+}
+.put label.method {
+  background: yellow;
+}
+.delete label.method {
+  background: orange;
+}
