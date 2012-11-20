@@ -3,18 +3,21 @@ MockServer = require('../index').MockServer
 utils = require('./utils')
 fs = require('fs')
 request = utils.request
+files = [
+  '/_documentation/index.html',
+  '/_documentation/documentation.css',
+  '/_documentation/documentation.js',
+  '/_documentation/zepto.min.js',
+  '/_documentation'
+]
 
 describe 'API Documentation', ->
   mock = undefined
   beforeEach ->
     mock = new MockServer({ port: utils.TESTING_PORT, log_enabled: false, path: __dirname + '/mock_data/' })
-    try
-      # TODO refactor
-      fs.unlinkSync(mock.options.path + '/_documentation/index.html')
-      fs.unlinkSync(mock.options.path + '/_documentation/documentation.css')
-      fs.unlinkSync(mock.options.path + '/_documentation/documentation.js')
-      fs.unlinkSync(mock.options.path + '/_documentation/zepto.min.js')
-      fs.rmdirSync(mock.options.path + '/_documentation')
+    for file in files
+      try
+        fs.unlinkSync(mock.options.path + file)
     mock.start()
   afterEach ->
     mock.stop()
@@ -40,9 +43,6 @@ describe 'API Documentation', ->
   describe 'generateApiDocumentation', ->
     it 'should generate the html file', (done) ->
       mock.generateApiDocumentation () ->
-        # TODO refactor
-        fs.existsSync(mock.options.path + '/_documentation/index.html').should.be.true
-        fs.existsSync(mock.options.path + '/_documentation/documentation.css').should.be.true
-        fs.existsSync(mock.options.path + '/_documentation/documentation.js').should.be.true
-        fs.existsSync(mock.options.path + '/_documentation/zepto.min.js').should.be.true
+        for file in files
+          fs.existsSync(mock.options.path + file).should.be.true
         done()
