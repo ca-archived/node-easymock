@@ -54,9 +54,9 @@ This will return:
         { "image": "http://server.com/img.jpg"}
 
 ### Routes
-The routes defined in the config.xml will get mapped to one corresponding file in which the given name will be available as a variable.
+The routes defined in the config.json will get mapped to one corresponding file in which the given name will be available as a variable.
 
-With the above confix.xml a call to GET /user/1234 would get mapped to the file: /user/userid_get.json. Inside that file one could write:
+With the above config.json a call to GET /user/1234 would get mapped to the file: /user/userid_get.json. Inside that file one could write:
 
     { "id": #{userid} }
 
