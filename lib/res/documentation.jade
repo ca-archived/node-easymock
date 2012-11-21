@@ -13,6 +13,8 @@ html(lang="en")
           label.method= call.method
           label.path= call.path
         .body
+          if call.description
+            .description!= call.description.replace('\n', '<br/>')
           if call.input.length > 0
             .in
               h2 In

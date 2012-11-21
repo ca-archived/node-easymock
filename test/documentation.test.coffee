@@ -36,7 +36,7 @@ describe 'API Documentation', ->
 
     it 'should replace the route parameter', (done) ->
       mock.getApiDocumentation (err, result) ->
-        result[1].path.should.equal '/groups/:groupid/show'
+        result[1].path.should.equal '/groups/:groupid'
         done()
 
     it 'should return input output documentation', (done) ->
@@ -48,6 +48,11 @@ describe 'API Documentation', ->
         result[5].input.length.should.equal 2
         result[5].input[0].should.equal 'Content-Type: application/json'
         result[5].input[1].should.equal '{ "post": true }'
+        done()
+
+    it 'should return description', (done) ->
+      mock.getApiDocumentation (err, result) ->
+        result[0].description.should.equal 'Retrieve the groups\nSecond line'
         done()
 
   describe 'generateApiDocumentation', ->

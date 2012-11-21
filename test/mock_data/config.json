@@ -3,7 +3,7 @@
     "server": "http://server.com"
   },
   "routes": [
-    "/groups/:id",
+    "/groups/:groupid",
     "/groups/:groupid/show",
     "/groups/:groupid/users/:userid"
   ]

@@ -1,3 +1,5 @@
+# Retrieve the groups
+# Second line
 < 200
 < Content-Type: application/json
 {
