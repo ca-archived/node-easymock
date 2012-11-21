@@ -74,7 +74,7 @@ For that create a folder "_templates" and in it place for example a file object.
 
 Then you can refer this template out of another file like items_get.json:
 
-        [ {{object}}, {{object}}, {{object}}, {{object}} ]
+        [ "{{object}}", "{{object}}", "{{object}}", "{{object}}"" ]
 
 This will return a array with four times the object from the template.
 
@@ -91,9 +91,9 @@ You can even use parameters. For example you have a template Object.json:
 And then a api object called items_get.json:
 
           [
-            {{Object(1,one,true)}},
-            {{Object(2,two,false)}},
-            {{Object(3,three,true)}}
+            "{{Object(1,one,true)}}",
+            "{{Object(2,two,false)}}",
+            "{{Object(3,three,true)}}"
           ]
 
 You will receive the following response:
