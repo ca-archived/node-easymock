@@ -24,6 +24,8 @@ If you want to configure routes, proxy or lag, create a config.json file which l
 
         {
           "simulated-lag": 1000,
+          "cors": false,
+          "jsonp": false,
           "proxy": {
             "server": "http://yourrealapi.com",
             "default": false,
@@ -130,6 +132,9 @@ easymock automatically documents the API it represents. This documentation can b
       "name": "your name",
       "description": "your description"
     }
+
+## CORS and JSONP
+Can be enabled by setting either "jsonp" or "cors" or both to true in the config.json.
 
 ## Run tests
 
