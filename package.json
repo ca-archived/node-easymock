@@ -4,7 +4,7 @@
   , "keywords"      : ["server", "mock", "routes", "proxy"]
   , "author"        : "Patrick Boos <mail@pboos.ch>"
   , "repository"    : {"type": "git", "url": "git://github.com/cyberagent-jp/node-easymock.git"}
-  , "version"       : "0.1.4"
+  , "version"       : "0.1.5"
   , "main"          : "index"
   , "bin"           : { "easymock": "./bin/easymock.js" }
   , "dependencies": {
