@@ -65,7 +65,6 @@ If this is the file, the result would be ```{ "userid": 1234 }```
 ---------
 
 ## Templates
-
 If you have items that are used over and over again, you can make templates for them and reuse the same template.
 
 For that create a folder "_templates" and in it place for example a file object.json:
@@ -115,6 +114,22 @@ You will receive the following response:
                 "active":true
              }
           ]
+
+## Documentation
+easymock automatically documents the API it represents. This documentation can be extended by adding additional information like description, input info and output info to the json file. This is an example on how to do that for example in test_post.json:
+
+    # This is some documentation
+    # This call creates an object
+    > Parameters:
+    > - name
+    > - description (optional)
+    < 200
+    < Content-Type: application/json
+    {
+      "id": 1234,
+      "name": "your name",
+      "description": "your description"
+    }
 
 ## Run tests
 
