@@ -8,7 +8,7 @@
   , "main"          : "index"
   , "bin"           : { "easymock": "./bin/easymock.js" }
   , "dependencies": {
-        "express":     "2.5.8"
+        "express":     "3.0.3"
       , "http-proxy":  "0.8.0"
       , "jade":        "0.27.7"
     }
