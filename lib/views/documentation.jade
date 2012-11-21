@@ -1,0 +1,26 @@
+each call in calls
+  div.call(class=call.classes)
+    .head
+      label.method= call.method
+      label.path= call.path
+    .body
+      if call.description
+        .description!= call.description.replace('\n', '<br/>')
+      if call.input.length > 0
+        .in
+          h2 In
+          ul
+            each input in call.input
+              li= input
+      .out
+        h2 Out
+        ul
+          each output in call.output
+            li= output
+        .response
+          pre
+            code= call.response
+script(src='zepto.min.js')
+script(src='documentation.js')
+script
+  hljs.initHighlightingOnLoad();
