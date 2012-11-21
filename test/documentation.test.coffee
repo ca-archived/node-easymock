@@ -8,7 +8,6 @@ files = [
   '/_documentation/documentation.css',
   '/_documentation/documentation.js',
   '/_documentation/zepto.min.js',
-  '/_documentation'
 ]
 
 describe 'API Documentation', ->
@@ -40,8 +39,21 @@ describe 'API Documentation', ->
         result[1].path.should.equal '/groups/:groupid/show'
         done()
 
+    it 'should return input output documentation', (done) ->
+      mock.getApiDocumentation (err, result) ->
+        result[0].output.length.should.equal 2
+        result[0].output[0].should.equal '200'
+        result[0].output[1].should.equal 'Content-Type: application/json'
+
+        result[5].input.length.should.equal 2
+        result[5].input[0].should.equal 'Content-Type: application/json'
+        result[5].input[1].should.equal '{ "post": true }'
+        done()
+
   describe 'generateApiDocumentation', ->
     it 'should generate the html file', (done) ->
+      for file in files
+        fs.existsSync(mock.options.path + file).should.be.false
       mock.generateApiDocumentation () ->
         for file in files
           fs.existsSync(mock.options.path + file).should.be.true

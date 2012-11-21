@@ -1,3 +1,5 @@
+< 200
+< Content-Type: application/json
 {
   "name": "groups"
 }

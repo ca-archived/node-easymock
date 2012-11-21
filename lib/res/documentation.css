@@ -5,6 +5,19 @@ body {
 h1,h2,h3,h4,h5 {
   margin: 0;
 }
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.head, .head label {
+  cursor: pointer;
+}
+.head:hover {
+  background: #cccccc;
+}
+
 label.method {
   min-width: 50px;
   display: inline-block;
@@ -23,4 +36,22 @@ label.method {
 }
 .delete label.method {
   background: orange;
+}
+.call {
+  border: 1px solid #aaa;
+  margin-bottom: 5px;
+}
+.call .body {
+  font-size: 12px;
+  line-height: 18px;
+  overflow-x: auto;
+  padding: 3px;
+}
+.call .in {
+  margin-bottom: 5px;
+}
+.call .in h2, .call .out h2 {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: bold;
 }
