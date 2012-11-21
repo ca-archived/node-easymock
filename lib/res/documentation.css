@@ -19,7 +19,7 @@ ul, li {
 }
 
 label.method {
-  min-width: 50px;
+  min-width: 80px;
   display: inline-block;
   text-align: center;
   margin-right: 5px;
@@ -32,7 +32,7 @@ label.method {
   background: #6FB728;
 }
 .put label.method {
-  background: yellow;
+  background: #4F9718;
 }
 .delete label.method {
   background: orange;
