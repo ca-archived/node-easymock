@@ -12,6 +12,7 @@
       , "http-proxy":  "0.8.0"
       , "jade":        "0.27.7"
       , "underscore":  "1.4.2"
+      , "broware":     "0.1.0"
     }
   , "devDependencies": {
       "chai":          "1.1.0"

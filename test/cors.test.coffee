@@ -39,7 +39,6 @@ describe 'CORS', ->
         res.headers['access-control-allow-origin'].should.equal '*'
         res.headers['access-control-allow-methods'].should.equal 'GET,PUT,POST,DELETE'
         res.headers['access-control-allow-headers'].should.equal 'Content-Type, Authorization'
-        res.body.should.equal 'OK'
         done()
 
   describe 'false', ->
