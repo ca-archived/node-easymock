@@ -6,7 +6,7 @@
   , "repository"    : {"type": "git", "url": "git://github.com/cyberagent-jp/node-easymock.git"}
   , "version"       : "0.1.5"
   , "main"          : "index"
-  , "bin"           : { "easymock": "./bin/easymock.js" }
+  , "bin"           : { "easymock": "./bin/easymock" }
   , "dependencies": {
         "express":     "3.0.3"
       , "http-proxy":  "0.8.0"
