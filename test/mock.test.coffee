@@ -127,7 +127,13 @@ describe 'Mock Server', ->
         json = JSON.parse res.body
         json.name.should.equal 'groups'
         done()
-    it 'should return given statusCode', (done) ->
+    it 'should send given @status', (done) ->
       request 'get', '/redirect', (res) ->
         res.statusCode.should.equal 301
+        done();
+
+    it 'should send given @header', (done) ->
+      request 'get', '/redirect', (res) ->
+        res.headers.should.have.property 'location'
+        res.headers['location'].should.equal 'http://www.cyberagent.co.jp'
         done();
