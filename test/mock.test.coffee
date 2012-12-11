@@ -127,3 +127,7 @@ describe 'Mock Server', ->
         json = JSON.parse res.body
         json.name.should.equal 'groups'
         done()
+    it 'should return given statusCode', (done) ->
+      request 'get', '/redirect', (res) ->
+        res.statusCode.should.equal 301
+        done();
