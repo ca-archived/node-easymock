@@ -11,12 +11,12 @@ block content
           .description!= call.description.replace('\n', '<br/>')
         if call.input.length > 0
           .in
-            h2 In
+            h2 Request
             ul
               each input in call.input
                 li= input
         .out
-          h2 Out
+          h2 Response
           ul
             each output in call.output
               li= output
