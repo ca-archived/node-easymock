@@ -125,7 +125,15 @@ You can specify the status code for the response with @status and add headers wi
     < @status 301
     < @header Location: http://www.cyberagent.co.jp
 
+Will respond with:
 
+    HTTP/1.1 301 Moved Permanently
+    x-powered-by: Express
+    location: http://www.cyberagent.co.jp
+    content-type: text/html; charset=utf-8
+    content-length: 0
+    date: Tue, 12 Mar 2013 08:21:39 GMT
+    connection: close
 
 ## Documentation
 easymock automatically documents the API it represents. This documentation can be extended by adding additional information like description, input info and output info to the json file. This is an example on how to do that for example in test_post.json:
