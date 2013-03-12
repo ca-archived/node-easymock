@@ -5,7 +5,7 @@
         $ npm install -g easymock
         $ easymock
 
----------
+
 
 ## Files
 All files from the running folder are present as static files. So place anything in there and it is accessible with GET filename.
@@ -17,7 +17,7 @@ If you want to use advanced serving features like GET/POST/PUT/DELETE or templat
         POST /items/1 => items/1_post.json
         ...
 
----------
+
 
 ## config.json
 If you want to configure routes, proxy or lag, create a config.json file which looks kind of like this:
@@ -64,7 +64,7 @@ With the above config.json a call to GET /user/1234 would get mapped to the file
 
 If this is the file, the result would be ```{ "userid": 1234 }```
 
----------
+
 
 ## Templates
 If you have items that are used over and over again, you can make templates for them and reuse the same template.
@@ -117,6 +117,16 @@ You will receive the following response:
              }
           ]
 
+
+
+## Response headers
+You can specify the status code for the response with @status and add headers with @header. The following example is for doing a redirect response.
+
+    < @status 301
+    < @header Location: http://www.cyberagent.co.jp
+
+
+
 ## Documentation
 easymock automatically documents the API it represents. This documentation can be extended by adding additional information like description, input info and output info to the json file. This is an example on how to do that for example in test_post.json:
 
@@ -125,20 +135,26 @@ easymock automatically documents the API it represents. This documentation can b
     > Parameters:
     > - name
     > - description (optional)
-    < 200
-    < Content-Type: application/json
+    < @status 200
+    < @header Content-Type: application/json
     {
       "id": 1234,
       "name": "your name",
       "description": "your description"
     }
 
+
+
 ## CORS and JSONP
 Can be enabled by setting either "jsonp" or "cors" or both to true in the config.json.
+
+
 
 ## Run tests
 
     make tests
+
+
 
 ## License
 
