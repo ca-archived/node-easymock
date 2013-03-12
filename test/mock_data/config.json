@@ -6,5 +6,12 @@
     "/groups/:groupid",
     "/groups/:groupid/show",
     "/groups/:groupid/users/:userid"
-  ]
+  ],
+  "proxy": {
+    "server": "http://real.com",
+    "default": false,
+    "calls": {
+      "/proxy": true
+    }
+  }
 }

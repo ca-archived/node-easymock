@@ -32,18 +32,25 @@ describe 'API Documentation', ->
 
     it 'should return input output documentation', (done) ->
       mock.getApiDocumentationJson (err, result) ->
+        result[0].path.should.equal '/groups'
         result[0].output.length.should.equal 2
         result[0].output[0].should.equal '200'
         result[0].output[1].should.equal 'Content-Type: application/json'
 
-        result[6].input.length.should.equal 2
-        result[6].input[0].should.equal 'Content-Type: application/json'
-        result[6].input[1].should.equal '{ "post": true }'
+        result[7].path.should.equal '/test1'
+        result[7].input.length.should.equal 2
+        result[7].input[0].should.equal 'Content-Type: application/json'
+        result[7].input[1].should.equal '{ "post": true }'
         done()
 
     it 'should return description', (done) ->
       mock.getApiDocumentationJson (err, result) ->
         result[0].description.should.equal 'Retrieve the groups\nSecond line'
+        done()
+
+    it 'should return proxy (true if call will run proxied)', (done) ->
+      mock.getApiDocumentationJson (err, result) ->
+        result[4].proxy.should.be.true
         done()
 
   describe 'GET /_documentation/', ->

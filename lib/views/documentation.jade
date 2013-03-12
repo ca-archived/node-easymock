@@ -6,6 +6,8 @@ block content
       .head
         label.method= call.method
         label.path= call.path
+        if call.proxy
+          label.proxy [proxy]
       .body
         if call.description
           .description!= call.description.replace('\n', '<br/>')

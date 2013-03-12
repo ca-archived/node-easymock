@@ -37,6 +37,12 @@ label.method {
 .delete label.method {
   background: orange;
 }
+label.proxy {
+  font-size: 10px;
+  font-style: italic;
+  color: orange;
+  margin-left: 10px;
+}
 .call {
   border: 1px solid #aaa;
   margin-bottom: 5px;
