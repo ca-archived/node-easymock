@@ -32,7 +32,7 @@ describe 'Access Logs', ->
           done()
 
     it 'should return request_body with requested variables', (done) ->
-      request 'post', '/groups', {body: 'test=true'}, (res) ->
+      request 'post', '/groups', {form: {test:true}}, (res) ->
         mock.log.getLogs (err, result) ->
           result[0].request_body.should.equal 'test=true'
           done()

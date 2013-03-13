@@ -8,11 +8,18 @@ exports.request = (method, path, options, fn) ->
     fn = options
     options = undefined
   options = options || { headers: [] }
-  req = request(_.extend({
+  options = _.extend({
       method: method
     , followRedirect: false
     , uri: 'http://localhost:' + exports.TESTING_PORT + path
-  }, options), (e, r, body) ->
-    r.body = body
-    fn(r)
-  )
+  }, options)
+  req = request(options)
+  req.on 'response', (res) ->
+    buf = ''
+    res.setEncoding('utf8');
+    res.on 'data', (chunk) ->
+      buf += chunk
+    res.on 'end', ->
+      res.body = buf;
+      fn(res)
+  req.end()

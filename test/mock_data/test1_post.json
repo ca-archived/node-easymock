@@ -2,5 +2,6 @@
 > { "post": true }
 < 200
 {
-  "post": true
+  "post": true,
+  "name": "#{name}"
 }

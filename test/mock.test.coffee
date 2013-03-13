@@ -90,6 +90,26 @@ describe 'Mock Server', ->
         json[2].should.have.property('active').and.be.true
         done()
 
+    it 'POST body parameters should be presented as variables', (done) ->
+      options = {
+          form: {name: 'Patrick'}
+      }
+      request 'post', '/test1', options, (res) ->
+        res.statusCode.should.equal 200
+        json = JSON.parse res.body
+        json.should.have.property('name').and.equal 'Patrick'
+        done()
+
+    it 'GET body parameters should be presented as variables', (done) ->
+      options = {
+          form: {query: 'help'}
+      }
+      request 'get', '/test1', options, (res) ->
+        res.statusCode.should.equal 200
+        json = JSON.parse res.body
+        json.should.have.property('query').and.equal 'help'
+        done()
+
   describe 'Routes /groups/:id', ->
     it '/groups/1 remapped to /groups/id', (done) ->
       request 'get', '/groups/1', (res) ->

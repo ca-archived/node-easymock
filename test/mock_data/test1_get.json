@@ -1,1 +1,1 @@
-{ "test": true }
+{ "test": true, "query": "#{query}" }
