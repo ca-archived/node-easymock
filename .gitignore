@@ -4,3 +4,4 @@ lib-cov/
 coverage.html
 
 test/mock_data/_documentation/
+access_logs.db

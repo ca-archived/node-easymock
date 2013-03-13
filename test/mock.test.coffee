@@ -127,6 +127,8 @@ describe 'Mock Server', ->
         json = JSON.parse res.body
         json.name.should.equal 'groups'
         done()
+
+  describe 'Meta data', ->
     it 'should send given @status', (done) ->
       request 'get', '/redirect', (res) ->
         res.statusCode.should.equal 301

@@ -1,0 +1,37 @@
+extends layout
+
+block head
+  link(rel='stylesheet',href='documentation.css')
+  link(src='moment.js')
+
+block content
+  each log in logs
+    div.call(class=log.request_method.toLowerCase())
+      .head
+        label.method= log.request_method
+        if !log.isProxied()
+          label.status= log.response_status
+        label.path= log.request_path
+        if log.isProxied()
+          label.proxy [proxy]
+        .right
+          label.client= log.client
+          label.time= moment(log.time + ' +0000').format('DD.MM.YYYY hh:mm:ss')
+      .body
+        .in
+          h2 Request
+            pre
+              code= log.request_headers
+            pre
+              code= log.request_body
+        if !log.isProxied()
+          .out
+            h2 Response
+              pre
+                code= log.response_headers
+              pre
+                code= log.response_body
+  script(src='zepto.min.js')
+  script(src='documentation.js')
+  script
+    hljs.initHighlightingOnLoad();

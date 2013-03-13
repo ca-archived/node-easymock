@@ -18,6 +18,14 @@ ul, li {
   background: #cccccc;
 }
 
+.right {
+  float: right;
+}
+
+label.client, label.status {
+  margin-right: 10px;
+}
+
 label.method {
   min-width: 80px;
   display: inline-block;

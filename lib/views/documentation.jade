@@ -1,5 +1,8 @@
 extends layout
 
+block head
+  link(rel='stylesheet',href='documentation.css')
+
 block content
   each call in calls
     div.call(class=call.classes)

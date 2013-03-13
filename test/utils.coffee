@@ -1,4 +1,6 @@
-http = require("http")
+http = require('http')
+_ = require('underscore')
+request = require('request')
 
 exports.TESTING_PORT = 12345
 exports.request = (method, path, options, fn) ->
@@ -6,19 +8,11 @@ exports.request = (method, path, options, fn) ->
     fn = options
     options = undefined
   options = options || { headers: [] }
-  req = http.request({
+  req = request(_.extend({
       method: method
-    , port: exports.TESTING_PORT
-    , host: 'localhost'
-    , path: path
-    , headers: options.headers
-  })
-  req.on 'response', (res) ->
-    buf = ''
-    res.setEncoding('utf8');
-    res.on 'data', (chunk) ->
-      buf += chunk
-    res.on 'end', ->
-      res.body = buf;
-      fn(res)
-  req.end()
+    , followRedirect: false
+    , uri: 'http://localhost:' + exports.TESTING_PORT + path
+  }, options), (e, r, body) ->
+    r.body = body
+    fn(r)
+  )
