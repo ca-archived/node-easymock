@@ -13,7 +13,7 @@
       , "jade":        "0.27.7"
       , "underscore":  "1.4.2"
       , "broware":     "0.1.0"
-      , "sqlite3":     "2.1.5"
+      , "sqlite3":     "2.1.7"
       , "moment":      "2.0.0"
     }
   , "devDependencies": {
