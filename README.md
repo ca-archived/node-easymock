@@ -160,6 +160,8 @@ easymock automatically documents the API it represents. This documentation can b
       "description": "your description"
     }
 
+## Logging
+All requests get logged and can be inspected. You can do so at http://localhost:3000/_logs/.
 
 
 ## CORS and JSONP
