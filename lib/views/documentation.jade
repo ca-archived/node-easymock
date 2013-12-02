@@ -4,6 +4,11 @@ block head
   link(rel='stylesheet',href='documentation.css')
 
 block content
+  if general
+    .call
+      .head.general General
+      .body
+        .general!= general
   each call in calls
     div.call(class=call.classes)
       .head

@@ -18,6 +18,7 @@
       , "broware":     "0.1.0"
       , "sqlite3":     "2.1.17"
       , "moment":      "2.0.0"
+      , "marked":      "0.2.10"
     }
   , "devDependencies": {
       "chai":          "1.1.0"

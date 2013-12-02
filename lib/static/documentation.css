@@ -17,6 +17,11 @@ ul, li {
 .head:hover {
   background: #cccccc;
 }
+.head.general {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 5px;
+}
 
 .right {
   float: right;
