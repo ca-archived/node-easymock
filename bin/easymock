@@ -1,5 +1,18 @@
 #!/usr/bin/env node
 
+var program = require('commander');
+
+program
+  .version(require('../package').version)
+  .option('-p, --port [port]', 'Set port. Default is 3000.', 3000)
+  .parse(process.argv);
+
 var MockServer = require('../index').MockServer;
-var mock = new MockServer();
+var options = undefined;
+if (program.port) {
+	options = {
+		port: parseInt(program.port)
+	};
+}
+var mock = new MockServer(options);
 mock.start();
