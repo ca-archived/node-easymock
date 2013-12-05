@@ -45,7 +45,7 @@ describe 'API Documentation', ->
 
     it 'should return description', (done) ->
       mock.getApiDocumentationJson (err, result) ->
-        result[0].description.should.equal 'Retrieve the groups\nSecond line'
+        result[0].description.should.equal 'Retrieve the groups<br />\nSecond line'
         done()
 
     it 'should return proxy (true if call will run proxied)', (done) ->
