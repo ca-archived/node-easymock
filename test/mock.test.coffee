@@ -165,3 +165,24 @@ describe 'Mock Server', ->
         res.headers.should.have.property 'location'
         res.headers['location'].should.equal 'http://www.cyberagent.co.jp'
         done();
+
+describe 'Mock Server create with config object', ->
+  mock = undefined
+  beforeEach ->
+    config = {
+      variables : {
+        server: "http://config.server.com"
+      }
+    }
+    mock = new MockServer({ port: utils.TESTING_PORT, log_enabled: false, path: __dirname + '/mock_data/', config: config })
+    mock.start()
+  afterEach ->
+    mock.stop()
+
+  it 'should be used config variable', (done) ->
+    request 'get', '/with_variable', (res) ->
+      res.statusCode.should.equal 200
+      json = JSON.parse res.body
+      json.should.have.property 'image'
+      json.image.should.equal 'http://config.server.com/image.jpg'
+      done()
