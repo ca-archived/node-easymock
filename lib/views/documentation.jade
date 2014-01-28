@@ -33,6 +33,13 @@ block content
           .response
             pre
               code= call.response
+          if (call.errors)
+            .errors
+              each error in call.errors
+                .error
+                  .status Error #{error.response.status}
+                  pre
+                    code= error.response.body
   script(src='zepto.min.js')
   script(src='documentation.js')
   script

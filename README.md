@@ -170,6 +170,20 @@ All requests get logged and can be inspected. You can do so at http://localhost:
 Can be enabled by setting either "jsonp" or "cors" or both to true in the config.json.
 
 
+## Errors
+Easymock can return errors defined in the documentation. the config.json set "error_rate": 0.5, to have a 50% error rate. So one out of 2 calls in average will return an error.
+To specify an error, first add a error json file in _documentation. For example "_documentation/error_not_authenticated.json":
+
+    {
+      "error": "Authentication required"
+    }
+
+In the mock file add an error like the following (example user.json):
+
+    < @error sample
+    < @error sample2
+
+If there are multiple errors like above, it will randomly select one. The name after @error indicates the file name. "@error sample" will serve "_documentation/error_sample.json".
 
 ## Run tests
 
