@@ -174,6 +174,7 @@ Can be enabled by setting either "jsonp" or "cors" or both to true in the config
 Easymock can return errors defined in the documentation. the config.json set "error-rate": 0.5, to have a 50% error rate. So one out of 2 calls in average will return an error.
 To specify an error, first add a error json file in _documentation. For example "_documentation/error_not_authenticated.json":
 
+    @status 401
     {
       "error": "Authentication required"
     }
