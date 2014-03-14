@@ -141,11 +141,11 @@ describe 'Mock Server', ->
         json[1].id.should.equal 52
         json[1].nested.id.should.equal 52
         done()
-    it '/groups/mock_data should supply a #{id} variable that gets replaced', (done) ->
-      request 'get', '/groups/mock_data', (res) ->
+    it '/groups/mock_data-1 should supply a #{id} variable that gets replaced', (done) ->
+      request 'get', '/groups/mock_data-1', (res) ->
         res.statusCode.should.equal 200
         json = JSON.parse res.body
-        json.name2.should.equal 'Group mock_data'
+        json.name2.should.equal 'Group mock_data-1'
         done()
     it '/groups should not forward to /groups/', (done) ->
       request 'get', '/groups', (res) ->
