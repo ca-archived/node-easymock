@@ -1,0 +1,4 @@
+< @status 401
+{
+  "error": "Authentication required"
+}

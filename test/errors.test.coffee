@@ -19,8 +19,8 @@ describe 'Mock Server', ->
   describe 'Error result', ->
     it 'GET /with_error.json should return an error', (done) ->
       request 'get', '/with_error', (res) ->
-        res.statusCode.should.equal 400
+        res.statusCode.should.equal 401
         json = JSON.parse res.body
         json.should.have.property 'error'
-        json.error.should.equal 'Test error'
+        json.error.should.equal 'Authentication required'
         done()
