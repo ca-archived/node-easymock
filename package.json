@@ -18,7 +18,7 @@
       , "broware":     "0.1.0"
       , "sqlite3":     "2.2.3"
       , "moment":      "2.0.0"
-      , "marked":      "0.2.10"
+      , "marked":      "0.3.2"
       , "commander":   "2.1.0"
     }
   , "devDependencies": {
