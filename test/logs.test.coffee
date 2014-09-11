@@ -7,9 +7,10 @@ request = utils.request
 describe 'Access Logs', ->
   mock = undefined
   beforeEach (done)->
-    mock = new MockServer({ port: utils.TESTING_PORT, log_enabled: false, path: __dirname + '/mock_data/' })
+    mock = new MockServer({ port: utils.TESTING_PORT, log_enabled: true, path: __dirname + '/mock_data/' })
     mock.start()
-    mock.log.clear(done)
+    mock.log.ensureCreation ->
+      mock.log.clear(done)
   afterEach ->
     mock.stop()
 
