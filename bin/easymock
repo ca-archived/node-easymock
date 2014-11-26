@@ -5,14 +5,15 @@ var program = require('commander');
 program
   .version(require('../package').version)
   .option('-p, --port [port]', 'Set port. Default is 3000.', 3000)
+  .option('-d, --path [directory]', 'Default directory where mocks are located.', process.cwd())
   .parse(process.argv);
 
 var MockServer = require('../index').MockServer;
-var options = undefined;
-if (program.port) {
-	options = {
-		port: parseInt(program.port)
-	};
-}
+
+var options = {
+  port: parseInt(program.port),
+  path: program.path
+};
+
 var mock = new MockServer(options);
 mock.start();

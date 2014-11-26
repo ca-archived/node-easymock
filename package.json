@@ -4,7 +4,7 @@
   , "keywords"      : ["server", "mock", "routes", "proxy"]
   , "author"        : "Patrick Boos <mail@pboos.ch>"
   , "repository"    : {"type": "git", "url": "git://github.com/cyberagent/node-easymock.git"}
-  , "version"       : "0.2.6"
+  , "version"       : "0.2.7"
   , "main"          : "index"
   , "bin"           : { "easymock": "./bin/easymock" }
   , "scripts" : {
@@ -18,7 +18,7 @@
       , "broware":     "0.1.0"
       , "sqlite3":     "2.2.3"
       , "moment":      "2.0.0"
-      , "marked":      "0.2.10"
+      , "marked":      "0.3.2"
       , "commander":   "2.1.0"
     }
   , "devDependencies": {
