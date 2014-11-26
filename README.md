@@ -44,6 +44,8 @@ If you want to configure routes, proxy or lag, create a config.json file which l
           ]
         }
 
+If you want a random lag in responses, like in a real-world scenario, set simulated-lag-min and simulated-lag-max instead of simulated-lag (which would take precedence, though)
+
 ### Variables
 Variables that you define in your config.json can be used in files that have the \_get/\_post/... extension. As well you can use them in your templates.
 

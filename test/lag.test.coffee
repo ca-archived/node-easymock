@@ -23,3 +23,25 @@ describe 'Mock Server with lag', ->
       lag.should.be.above 100
       console.log
       done()
+
+describe 'Mock Server with random lag', ->
+  mock = undefined
+  beforeEach ->
+    mock = new MockServer
+      port: utils.TESTING_PORT
+      log_enabled: false
+      path: __dirname + '/mock_data/'
+      config: __dirname + '/mock_data/config_with_random_lag.json'
+    mock.start()
+  afterEach ->
+    mock.stop()
+
+  it 'should add random, variable lag', (done) ->
+    start = new Date
+    request 'get', '/test1', (res) ->
+      end = new Date
+      lag = end.getTime() - start.getTime()
+      lag.should.be.above 200
+      lag.should.be.below 1100
+      console.log
+      done()
