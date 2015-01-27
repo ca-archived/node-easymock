@@ -101,10 +101,7 @@ describe 'Mock Server', ->
         done()
 
     it 'GET body parameters should be presented as variables', (done) ->
-      options = {
-          form: {query: 'help'}
-      }
-      request 'get', '/test1', options, (res) ->
+      request 'get', '/test1?query=help', (res) ->
         res.statusCode.should.equal 200
         json = JSON.parse res.body
         json.should.have.property('query').and.equal 'help'
@@ -115,6 +112,13 @@ describe 'Mock Server', ->
         res.statusCode.should.equal 200
         json = JSON.parse res.body
         json.should.have.property('path').and.equal 'http://localhost:' + utils.TESTING_PORT + '/path'
+        done()
+
+    it '#{name_#lang} should be replaced correctly with #lang = de -> #{name_de} => Patrick', (done) ->
+      request 'get', '/with_variable_within_variable?lang=de', (res) ->
+        res.statusCode.should.equal 200
+        json = JSON.parse res.body
+        json.should.have.property('name').and.equal 'Patrick'
         done()
 
   describe 'Routes /groups/:id', ->

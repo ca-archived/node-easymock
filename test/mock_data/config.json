@@ -1,6 +1,7 @@
 {
   "variables" : {
-    "server": "http://server.com"
+    "server": "http://server.com",
+    "name_de": "Patrick"
   },
   "routes": [
     "/groups/:groupid",
