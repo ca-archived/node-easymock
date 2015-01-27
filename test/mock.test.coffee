@@ -110,6 +110,13 @@ describe 'Mock Server', ->
         json.should.have.property('query').and.equal 'help'
         done()
 
+    it '#{HOST} should be replaced with the current requests host', (done) ->
+      request 'get', '/with_variable_HOST', (res) ->
+        res.statusCode.should.equal 200
+        json = JSON.parse res.body
+        json.should.have.property('path').and.equal 'http://localhost:' + utils.TESTING_PORT + '/path'
+        done()
+
   describe 'Routes /groups/:id', ->
     it '/groups/1 remapped to /groups/id', (done) ->
       request 'get', '/groups/1', (res) ->

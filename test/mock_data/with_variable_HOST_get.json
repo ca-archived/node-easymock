@@ -1,0 +1,3 @@
+{
+  "path": "http://#{HOST}/path"
+}
