@@ -35,7 +35,7 @@ If you want to configure routes, proxy or lag, create a config.json file which l
             }
           },
           "variables": {
-            "server": "http://server.com"
+            "name": "My name"
           },
           "routes": [
             "/user/:userid",
@@ -49,13 +49,19 @@ If you want a random lag in responses, like in a real-world scenario, set simula
 ### Variables
 Variables that you define in your config.json can be used in files that have the \_get/\_post/... extension. As well you can use them in your templates.
 
+Nested variables support: #{name_#{lang}} will resolve to #{name_de} for #{lang} = 'de' (if given as GET or POST parameter for example).
+
+Following variables are available by default:
+
+- #{HOST} -> Requested hostname (and port) of the request. For example ```localhost:3000``` or ```127.0.0.1```
+
 Example to use variables. item_get.json:
 
-        { "image": "#{server}/img.jpg" }
+        { "user_name": "#{name}", "image": "http://#{HOST}/img.jpg"}
 
 This will return:
 
-        { "image": "http://server.com/img.jpg"}
+        { "user_name": "#{user_name", "image": "http://localhost/img.jpg"}
 
 ## GET query and POST body fields as Variables
 Any field given in GET or POST can be used like other variables.
@@ -63,8 +69,6 @@ Any field given in GET or POST can be used like other variables.
         Example: GET /search?q=test
 
 Will provide you with a usable ```#{q}``` in your json file.
-
-Any
 
 ### Routes
 The routes defined in the config.json will get mapped to one corresponding file in which the given name will be available as a variable.
