@@ -181,7 +181,7 @@ Can be enabled by setting either "jsonp" or "cors" or both to true in the config
 
 ## Errors
 Easymock can return errors defined in the documentation. the config.json set "error-rate": 0.5, to have a 50% error rate. So one out of 2 calls in average will return an error.
-To specify an error, first add a error json file in \_documentation. For example "\_documentation/error\_not\_authenticated.json":
+To specify an error, first add a error json file in \_errors. For example "\_errors/not\_authenticated.json":
 
     < @status 401
     {
@@ -192,8 +192,35 @@ In the mock file add an error like the following (example user.json):
 
     < @error sample
     < @error sample2
+    < @error sample3 0.5
 
-If there are multiple errors like above, it will randomly select one. The name after @error indicates the file name. "@error sample" will serve "\_documentation/error_sample.json".
+If there are multiple errors like above, it will randomly select one. By default it uses the ```error-rate``` specified in the config.json. A specific error rate for each error can be set by adding the error rate as shown above.
+
+The name after @error indicates the file name. "@error sample" will serve "\_errors/sample.json".
+
+### General errros
+For errors that can occur on any call, set up the config.json as follows:
+
+    {
+      "error-rate": 1,
+      "errors" : ["general"]
+    }
+
+Or to have specific error rates on each general error:
+
+    {
+      "error-rate": 0,
+      "errors" : [
+        {
+          "name": "general",
+          "rate": 0.1
+        },{
+          "name": "general2",
+          "rate": 0.3
+        }
+      ]
+    }
+
 
 ## Run tests
 

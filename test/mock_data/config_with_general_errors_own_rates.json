@@ -1,0 +1,4 @@
+{
+  "error-rate": 0,
+  "errors" : [ { "name":"general", "rate": 1 } ]
+}
