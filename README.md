@@ -70,6 +70,9 @@ Any field given in GET or POST can be used like other variables.
 
 Will provide you with a usable ```#{q}``` in your json file.
 
+## Header fields as variables
+Any header can be used as a variable. For example the header Accept-Language can be accessed via ```#{HEADER_ACCEPT_LANGUAGE}```.
+
 ### Routes
 The routes defined in the config.json will get mapped to one corresponding file in which the given name will be available as a variable.
 

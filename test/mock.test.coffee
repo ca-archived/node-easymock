@@ -107,6 +107,18 @@ describe 'Mock Server', ->
         json.should.have.property('query').and.equal 'help'
         done()
 
+    it 'Headers should be presented as variables', (done) ->
+      options = {
+        headers: {
+          'Accept-Language': 'ja'
+        }
+      }
+      request 'get', '/test_headers', options, (res) ->
+        res.statusCode.should.equal 200
+        json = JSON.parse res.body
+        json.should.have.property('language').and.equal 'ja'
+        done()
+
     it '#{HOST} should be replaced with the current requests host', (done) ->
       request 'get', '/with_variable_HOST', (res) ->
         res.statusCode.should.equal 200
