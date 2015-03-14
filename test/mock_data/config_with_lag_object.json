@@ -1,0 +1,24 @@
+
+{
+  "simulated-lag": {
+    "default": 1000,
+    "paths": [
+      {
+        "match": "^/dontmatchme$",
+        "lag": 5000
+      },
+      {
+        "match": "/laggy",
+        "lag": 500
+      },
+      {
+        "match": "^/laggy",
+        "lag": 800
+      },
+      {
+        "match": "^/lag_is_fun/[0-9]+$",
+        "lag": 200
+      }
+    ]
+  }
+}
