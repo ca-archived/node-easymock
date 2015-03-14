@@ -53,7 +53,8 @@ Nested variables support: #{name_#{lang}} will resolve to #{name_de} for #{lang}
 
 Following variables are available by default:
 
-- #{HOST} -> Requested hostname (and port) of the request. For example ```localhost:3000``` or ```127.0.0.1```
+- `#{HOST}` -> Requested hostname (and port) of the request. For example ```localhost:3000``` or ```127.0.0.1```
+- `#{QUERY_STRING}` -> Complete query string of the request. For example ```foo=bar``` or ```a=b&c=d```
 
 Example to use variables. item_get.json:
 
