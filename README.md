@@ -44,7 +44,45 @@ If you want to configure routes, proxy or lag, create a config.json file which l
           ]
         }
 
-If you want a random lag in responses, like in a real-world scenario, set simulated-lag-min and simulated-lag-max instead of simulated-lag (which would take precedence, though)
+### Simulating lag in responses
+To add the same lag to all responses, set simulated-lag to a number.
+
+    {
+      "simulated-lag": 1000
+    }
+
+If you want a random lag in responses, like in a real-world scenario, set
+simulated-lag-min and simulated-lag-max instead of simulated-lag. If
+simulated-lag is set, it will take precedence over simulated-lag-min and -max.
+
+#### Changing the simulated lag based on the path
+
+For more fine-grained control over lag in responses, specify an object for
+simulated-lag, as in the following example:
+
+    {
+      "simulated-lag": {
+        "default": 500,
+        "paths": [
+          {
+            "match": "^/users$",
+            "lag": 1000
+          },
+          {
+            "match": "^/users/.*",
+            "lag": 2000
+          },
+          {
+            "match": "no-lag",
+            "lag": 0
+          }
+        ]
+      }
+    }
+
+Each "match" value is turned into a regular expression (using `new RegExp`) and
+matched against the request path (which excludes the query string). The first
+match found in the "paths" array is the one used, so be careful with the order.
 
 ### Variables
 Variables that you define in your config.json can be used in files that have the \_get/\_post/... extension. As well you can use them in your templates.
