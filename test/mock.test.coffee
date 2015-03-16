@@ -126,6 +126,13 @@ describe 'Mock Server', ->
         json.should.have.property('path').and.equal 'http://localhost:' + utils.TESTING_PORT + '/path'
         done()
 
+    it '#{QUERY_STRING} should be replaced with the current request\'s query string', (done) ->
+      request 'get', '/with_variable_QUERY_STRING?foo=bar', (res) ->
+        res.statusCode.should.equal 200
+        json = JSON.parse res.body
+        json.should.have.property('query').and.equal 'foo=bar'
+        done()
+
     it '#{name_#lang} should be replaced correctly with #lang = de -> #{name_de} => Patrick', (done) ->
       request 'get', '/with_variable_within_variable?lang=de', (res) ->
         res.statusCode.should.equal 200
