@@ -12,26 +12,26 @@ describe 'API Documentation', ->
   afterEach ->
     mock.stop()
 
-  describe 'getApiDocumentationJson', ->
+  describe 'getApiDocumentationJsonInternal', ->
     it 'should return an array of calls', (done) ->
-      mock.getApiDocumentationJson 'host', (err, result) ->
+      mock.getApiDocumentationJsonInternal 'host', (err, result) ->
         result.length.should.exist
         result[0].method.should.equal 'GET'
         result[0].path.should.exist
         done()
 
     it 'should sort the calls by path', (done) ->
-      mock.getApiDocumentationJson 'host', (err, result) ->
+      mock.getApiDocumentationJsonInternal 'host', (err, result) ->
         result[0].path.should.equal '/groups'
         done()
 
     it 'should replace the route parameter', (done) ->
-      mock.getApiDocumentationJson 'host', (err, result) ->
+      mock.getApiDocumentationJsonInternal 'host', (err, result) ->
         result[1].path.should.equal '/groups/:groupid'
         done()
 
     it 'should return input output documentation', (done) ->
-      mock.getApiDocumentationJson 'host', (err, result) ->
+      mock.getApiDocumentationJsonInternal 'host', (err, result) ->
         result[0].path.should.equal '/groups'
         result[0].output.length.should.equal 2
         result[0].output[0].should.equal '200'
@@ -44,12 +44,12 @@ describe 'API Documentation', ->
         done()
 
     it 'should return description', (done) ->
-      mock.getApiDocumentationJson 'host', (err, result) ->
+      mock.getApiDocumentationJsonInternal 'host', (err, result) ->
         result[0].description.should.equal 'Retrieve the groups<br />\nSecond line'
         done()
 
     it 'should return proxy (true if call will run proxied)', (done) ->
-      mock.getApiDocumentationJson 'host', (err, result) ->
+      mock.getApiDocumentationJsonInternal 'host', (err, result) ->
         result[4].proxy.should.be.true
         done()
 
