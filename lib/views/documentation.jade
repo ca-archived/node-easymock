@@ -18,7 +18,7 @@ block content
           label.proxy [proxy]
       .body
         if call.description
-          .description!= call.description.replace('\n', '<br/>')
+          .description!= call.description
         if call.input.length > 0
           .in
             h2 Request
