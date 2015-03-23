@@ -37,7 +37,7 @@ block content
             .errors
               each error in call.errors
                 .error
-                  h2 Error: #{error.file.substr(error.file.lastIndexOf('/') + 1).replace('.json', '')}
+                  h2 Error: #{error.name}
                   .status @status #{error.response.status}
                   pre
                     code= error.response.body
