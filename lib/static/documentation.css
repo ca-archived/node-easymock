@@ -68,8 +68,8 @@ label.proxy {
 .call .in {
   margin-bottom: 5px;
 }
-.call .in h2, .call .out h2, .error h2 {
+.error h3 {
   font-size: 12px;
-  line-height: 18px;
   font-weight: bold;
+  margin: 0;
 }

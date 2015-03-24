@@ -26,7 +26,7 @@ block content
               each input in call.input
                 li= input
         .out
-          h2 Response
+          h2 Success Response
           ul
             each output in call.output
               li= output
@@ -35,9 +35,12 @@ block content
               code= call.response
           if (call.errors)
             .errors
+              h2 Error Responses
               each error in call.errors
                 .error
-                  h2 Error: #{error.name}
+                  h3 Error: #{error.name}
+                  if error.description
+                    .description= error.description
                   .status @status #{error.response.status}
                   pre
                     code= error.response.body
