@@ -237,7 +237,7 @@ If there are multiple errors like above, it will randomly select one. By default
 
 The name after @error indicates the file name. "@error sample" will serve "\_errors/sample.json".
 
-### General errros
+### General errors
 For errors that can occur on any call, set up the config.json as follows:
 
     {
