@@ -132,7 +132,7 @@ For that create a folder "_templates" and in it place for example a file object.
 
 Then you can refer this template out of another file like items_get.json:
 
-        [ "{{object}}", "{{object}}", "{{object}}", "{{object}}"" ]
+        [ "{{object}}", "{{object}}", "{{object}}", "{{object}}" ]
 
 This will return a array with four times the object from the template.
 
