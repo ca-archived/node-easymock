@@ -1,12 +1,11 @@
 {
-    "name"          : "easymock"
+    "name"          : "fakit"
   , "description"   : "Easy to use mock server that supports templates and routes."
   , "keywords"      : ["server", "mock", "routes", "proxy"]
-  , "author"        : "Patrick Boos <mail@pboos.ch>"
-  , "repository"    : {"type": "git", "url": "git://github.com/cyberagent/node-easymock.git"}
-  , "version"       : "0.2.17"
+  , "repository"    : {"type": "git", "url": "git://github.com/pihvi/node-easymock.git"}
+  , "version"       : "1.0.19"
   , "main"          : "index"
-  , "bin"           : { "easymock": "./bin/easymock" }
+  , "bin"           : { "fakit": "./bin/easymock" }
   , "scripts" : {
         "test": "make tests"
     }
@@ -16,7 +15,7 @@
       , "jade":        "0.27.7"
       , "underscore":  "1.4.2"
       , "broware":     "0.1.0"
-      , "sqlite3":     "3.0.5"
+      , "sqlite3":     "3.1.0"
       , "moment":      "2.0.0"
       , "marked":      "0.3.2"
       , "commander":   "2.1.0"
