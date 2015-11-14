@@ -3,7 +3,7 @@
   , "description"   : "Easy to use mock server that supports templates and routes."
   , "keywords"      : ["server", "mock", "routes", "proxy"]
   , "repository"    : {"type": "git", "url": "git://github.com/pihvi/node-easymock.git"}
-  , "version"       : "0.2.18"
+  , "version"       : "1.0.19"
   , "main"          : "index"
   , "bin"           : { "fakit": "./bin/easymock" }
   , "scripts" : {

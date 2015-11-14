@@ -1,9 +1,10 @@
-# EasyMock Server
+# Fakit Server
+i.e. easymock working also in Node v4 and some other stuff..
 
 ## Usage
 
-        $ npm install -g easymock
-        $ easymock
+        $ npm install -g fakit
+        $ fakit
 
 
 
@@ -193,7 +194,7 @@ Will respond with:
     connection: close
 
 ## Documentation
-easymock automatically documents the API it represents. This documentation can be extended by adding additional information like description, input info and output info to the json file. This is an example on how to do that for example in test_post.json:
+fakit automatically documents the API it represents. This documentation can be extended by adding additional information like description, input info and output info to the json file. This is an example on how to do that for example in test_post.json:
 
     # This is some documentation
     # This call creates an object
@@ -219,7 +220,7 @@ Can be enabled by setting either "jsonp" or "cors" or both to true in the config
 
 
 ## Errors
-Easymock can return errors defined in the documentation. the config.json set "error-rate": 0.5, to have a 50% error rate. So one out of 2 calls in average will return an error.
+Fakit can return errors defined in the documentation. the config.json set "error-rate": 0.5, to have a 50% error rate. So one out of 2 calls in average will return an error.
 To specify an error, first add a error json file in \_errors. For example "\_errors/not\_authenticated.json":
 
     < @status 401
