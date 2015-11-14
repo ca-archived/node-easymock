@@ -1,12 +1,11 @@
 {
-    "name"          : "easymock"
+    "name"          : "fakit"
   , "description"   : "Easy to use mock server that supports templates and routes."
   , "keywords"      : ["server", "mock", "routes", "proxy"]
-  , "author"        : "Patrick Boos <mail@pboos.ch>"
-  , "repository"    : {"type": "git", "url": "git://github.com/cyberagent/node-easymock.git"}
-  , "version"       : "0.2.17"
+  , "repository"    : {"type": "git", "url": "git://github.com/pihvi/node-easymock.git"}
+  , "version"       : "0.2.18"
   , "main"          : "index"
-  , "bin"           : { "easymock": "./bin/easymock" }
+  , "bin"           : { "fakit": "./bin/easymock" }
   , "scripts" : {
         "test": "make tests"
     }
