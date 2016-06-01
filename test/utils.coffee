@@ -22,4 +22,3 @@ exports.request = (method, path, options, fn) ->
     res.on 'end', ->
       res.body = buf;
       fn(res)
-  req.end()
