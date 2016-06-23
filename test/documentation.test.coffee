@@ -41,6 +41,11 @@ describe 'API Documentation', ->
         result[7].input.length.should.equal 2
         result[7].input[0].should.equal 'Content-Type: application/json'
         result[7].input[1].should.equal '{ "post": true }'
+
+        result[8].path.should.equal '/test1'
+        result[8].input.length.should.equal 2
+        result[8].input[0].should.equal 'Content-Type: application/json'
+        result[8].input[1].should.equal '{ "patch": true }'
         done()
 
     it 'should return description', (done) ->
