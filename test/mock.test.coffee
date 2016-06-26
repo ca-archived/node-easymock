@@ -44,6 +44,14 @@ describe 'Mock Server', ->
         json.post.should.be.true
         done()
 
+    it 'PATCH /test1 should serve test1_patch.json', (done) ->
+      request 'patch', '/test1', (res) ->
+        res.statusCode.should.equal 200
+        json = JSON.parse res.body
+        json.should.have.property 'patch'
+        json.patch.should.be.true
+        done()
+
   describe 'Templates', ->
     it '{{Object1}} should be replaced with _templates/Object1.json', (done) ->
       request 'get', '/with_template', (res) ->

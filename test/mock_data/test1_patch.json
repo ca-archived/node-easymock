@@ -1,0 +1,7 @@
+> Content-Type: application/json
+> { "patch": true }
+< 200
+{
+  "patch": true,
+  "name": "#{name}"
+}

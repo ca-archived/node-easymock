@@ -28,7 +28,7 @@ describe 'CORS', ->
       request 'get', '/test1', (res) ->
         res.statusCode.should.equal 200
         res.headers['access-control-allow-origin'].should.equal '*'
-        res.headers['access-control-allow-methods'].should.equal 'GET,PUT,POST,DELETE'
+        res.headers['access-control-allow-methods'].should.equal 'GET,PUT,POST,DELETE,PATCH'
         res.headers['access-control-allow-headers'].should.equal 'Content-Type, Authorization'
         json = JSON.parse res.body
         json.should.have.property 'test'
@@ -37,7 +37,7 @@ describe 'CORS', ->
       request 'options', '/test1', (res) ->
         res.statusCode.should.equal 200
         res.headers['access-control-allow-origin'].should.equal '*'
-        res.headers['access-control-allow-methods'].should.equal 'GET,PUT,POST,DELETE'
+        res.headers['access-control-allow-methods'].should.equal 'GET,PUT,POST,DELETE,PATCH'
         res.headers['access-control-allow-headers'].should.equal 'Content-Type, Authorization'
         done()
 
