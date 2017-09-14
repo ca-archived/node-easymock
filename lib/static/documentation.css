@@ -38,16 +38,19 @@ label.method {
   color: #ffffff;
 }
 .get label.method {
-  background: #4699FF;
+  background: #5DADE2;
 }
 .post label.method {
-  background: #6FB728;
+  background: #239B56;
 }
 .put label.method {
-  background: #4F9718;
+  background: #58D68D;
+}
+.patch label.method {
+  background: #186A3B;
 }
 .delete label.method {
-  background: orange;
+  background: #E67E22;
 }
 label.proxy {
   font-size: 10px;
