@@ -20,17 +20,17 @@ block content
       .body
         .in
           h2 Request
-            pre
-              code= log.request_headers
-            pre
-              code= log.request_body
+          pre
+            code= log.request_headers
+          pre
+            code= log.request_body
         if !log.isProxied()
           .out
             h2 Response
-              pre
-                code= log.response_headers
-              pre
-                code= log.response_body
+            pre
+              code= log.response_headers
+            pre
+              code= log.response_body
   script(src='zepto.min.js')
   script(src='documentation.js')
   script
