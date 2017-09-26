@@ -34,18 +34,18 @@ describe 'API Documentation', ->
       mock.getApiDocumentationJsonInternal 'host', (err, result) ->
         result[0].path.should.equal '/groups'
         result[0].output.length.should.equal 2
-        result[0].output[0].should.equal '200'
-        result[0].output[1].should.equal 'Content-Type: application/json'
+        result[0].output[0].should.equal '@status 200'
+        result[0].output[1].should.equal '@header Content-Type: application/json'
 
         result[7].path.should.equal '/test1'
-        result[7].input.length.should.equal 2
-        result[7].input[0].should.equal 'Content-Type: application/json'
-        result[7].input[1].should.equal '{ "post": true }'
+        result[7].input.length.should.equal 1
+        result[7].input[0].should.equal '@header Content-Type: application/json'
+        result[7].inputBody.should.equal '{ "post": true }'
 
         result[8].path.should.equal '/test1'
-        result[8].input.length.should.equal 2
-        result[8].input[0].should.equal 'Content-Type: application/json'
-        result[8].input[1].should.equal '{ "patch": true }'
+        result[8].input.length.should.equal 1
+        result[8].input[0].should.equal '@header Content-Type: application/json'
+        result[8].inputBody.should.equal '{ "patch": true }'
         done()
 
     it 'should return description', (done) ->

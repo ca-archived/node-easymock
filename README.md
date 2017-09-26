@@ -60,25 +60,27 @@ simulated-lag is set, it will take precedence over simulated-lag-min and -max.
 For more fine-grained control over lag in responses, specify an object for
 simulated-lag, as in the following example:
 
-    {
-      "simulated-lag": {
-        "default": 500,
-        "paths": [
-          {
-            "match": "^/users$",
-            "lag": 1000
-          },
-          {
-            "match": "^/users/.*",
-            "lag": 2000
-          },
-          {
-            "match": "no-lag",
-            "lag": 0
-          }
-        ]
+```
+{
+  "simulated-lag": {
+    "default": 500,
+    "paths": [
+      {
+        "match": "^/users$",
+        "lag": 1000
+      },
+      {
+        "match": "^/users/.*",
+        "lag": 2000
+      },
+      {
+        "match": "no-lag",
+        "lag": 0
       }
-    }
+    ]
+  }
+}
+```
 
 Each "match" value is turned into a regular expression (using `new RegExp`) and
 matched against the request path (which excludes the query string). The first
@@ -126,7 +128,7 @@ If this is the file, the result would be ```{ "userid": 1234 }```
 ## Templates
 If you have items that are used over and over again, you can make templates for them and reuse the same template.
 
-For that create a folder "_templates" and in it place for example a file object.json:
+For that create a folder ```_templates``` and in it place for example a file object.json:
 
         { "name": "my object" }
 
@@ -197,9 +199,11 @@ easymock automatically documents the API it represents. This documentation can b
 
     # This is some documentation
     # This call creates an object
-    > Parameters:
-    > - name
-    > - description (optional)
+    > @param name
+    > @param description (optional)
+    > @body {
+    > @body   "name": "Nobody"
+    > @body }
     < @status 200
     < @header Content-Type: application/json
     {
@@ -208,7 +212,14 @@ easymock automatically documents the API it represents. This documentation can b
       "description": "your description"
     }
 
-To add some general information in the documentation, add a file "_documentation/index.md". That one will be shown at the top of the documented calls.
+Explanation:
+
+- ```#``` Is general information about the call.
+- ```>``` About the request to the API.
+- ```<``` About the response from the API.
+- Everything afterwards is the response body.
+
+To add some general information in the documentation, add a file ```_documentation/index.md```. That one will be shown at the top of the documented calls.
 
 ## Logging
 All requests get logged and can be inspected. You can do so at http://localhost:3000/_logs/.

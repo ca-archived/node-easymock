@@ -25,6 +25,10 @@ block content
             ul
               each input in call.input
                 li= input
+            if (call.inputBody && call.inputBody.length > 0)
+              .response
+                pre
+                  code= call.inputBody
         .out
           h2 Success Response
           ul
@@ -33,7 +37,7 @@ block content
           .response
             pre
               code= call.response
-          if (call.errors)
+          if (call.errors && call.errors.length > 0)
             .errors
               h2 Error Responses
               each error in call.errors

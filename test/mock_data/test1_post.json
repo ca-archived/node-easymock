@@ -1,6 +1,6 @@
-> Content-Type: application/json
-> { "post": true }
-< 200
+> @header Content-Type: application/json
+> @body { "post": true }
+< @status 200
 {
   "post": true,
   "name": "#{name}"

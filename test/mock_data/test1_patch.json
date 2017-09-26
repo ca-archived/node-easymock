@@ -1,6 +1,6 @@
-> Content-Type: application/json
-> { "patch": true }
-< 200
+> @header Content-Type: application/json
+> @body { "patch": true }
+< @status 200
 {
   "patch": true,
   "name": "#{name}"
