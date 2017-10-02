@@ -36,6 +36,14 @@ describe 'Mock Server', ->
         json.test.should.be.true
         done()
 
+    it 'GET /test1/ should serve test1_get.json', (done) ->
+      request 'get', '/test1/', (res) ->
+        res.statusCode.should.equal 200
+        json = JSON.parse res.body
+        json.should.have.property 'test'
+        json.test.should.be.true
+        done()
+
     it 'POST /test1 should serve test1_post.json', (done) ->
       request 'post', '/test1', (res) ->
         res.statusCode.should.equal 200
