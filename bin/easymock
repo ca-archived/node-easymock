@@ -12,8 +12,17 @@ var MockServer = require('../index').MockServer;
 
 var options = {
   port: parseInt(program.port),
-  path: program.path
+  path: program.path,
+  requestLogger: function(req) {
+      console.log(req.method + ' ' + req.path + ' ==> ' + (req.proxied ? 'Proxy' : req.info.file));
+  }
 };
 
 var mock = new MockServer(options);
 mock.start();
+
+var serverUrl = 'http://localhost:' + mock.options.port;
+console.log('Server running on ' + serverUrl);
+console.log('Listening on port ' + mock.options.port + ' and ' + (mock.options.port + 1));
+console.log('Documentation at: ' + serverUrl + '/_documentation/');
+console.log('Logs at:          ' + serverUrl + '/_logs/');
