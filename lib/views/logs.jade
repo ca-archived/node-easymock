@@ -22,8 +22,9 @@ block content
           h2 Request
           pre
             code= log.request_headers
-          pre
-            code= log.request_body
+          if (log.request_body && log.request_body.length > 0)
+            pre
+              code= log.request_body
         if !log.isProxied()
           .out
             h2 Response
