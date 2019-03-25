@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git://github.com/cyberagent/node-easymock.git"
   },
-  "version": "0.2.28",
+  "version": "0.2.29",
   "main": "index",
   "bin": {
     "easymock": "./bin/easymock"
